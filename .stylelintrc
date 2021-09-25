@@ -1,0 +1,14 @@
+{
+  "extends": "stylelint-config-htmlacademy",
+  "rules": {
+    "indentation": 2,
+    "color-named" : "never",
+    "number-leading-zero": null,
+    "property-no-unknown": [ true, {
+      "ignoreProperties": [
+        "composes", "-webkit-transition"
+      ]
+    }],
+    "unit-whitelist": ["em", "rem", "s", "px", "%", "vh", "deg", "ms"]
+  }
+}
