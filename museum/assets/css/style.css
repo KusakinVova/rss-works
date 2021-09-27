@@ -627,8 +627,11 @@ a {
 }
 .gallery__item {
   max-width: 456px;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
 }
-.gallery__item:first-child, .gallery__item:nth-child(11) {
+.gallery__item_margintop {
   padding-top: 50px;
 }
 

@@ -753,10 +753,10 @@ a {
 
   &__item {
     max-width: 456px;
-    // width: 100%;
 
-    &:first-child,
-    &:nth-child(11) {
+    @include transition;
+
+    &_margintop {
       padding-top: 50px;
     }
   }
