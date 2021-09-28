@@ -129,6 +129,14 @@ a {
   height: 400px;
 }
 
+.text_center {
+  text-align: center;
+}
+
+.text_right {
+  text-align: right;
+}
+
 // ========================================================================================
 // header
 
@@ -1008,6 +1016,11 @@ a {
     background-color: $text_for_bg_dark;
     position: relative;
     box-sizing: border-box;
+    padding: 91px 235px;
+  }
+
+  &__logo {
+
   }
 }
 
@@ -1177,6 +1190,7 @@ a {
     font-size: $font_size_m;
     line-height: 22px;
     letter-spacing: 2px;
+    width: 33%;
   }
 
   &__link:hover {

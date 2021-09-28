@@ -117,6 +117,14 @@ a {
   height: 400px;
 }
 
+.text_center {
+  text-align: center;
+}
+
+.text_right {
+  text-align: right;
+}
+
 .header__container {
   display: flex;
   justify-content: space-between;
@@ -848,8 +856,8 @@ a {
   background-color: #ffffff;
   position: relative;
   box-sizing: border-box;
+  padding: 91px 235px;
 }
-
 .contacts__sec {
   padding-bottom: 70px;
 }
@@ -983,6 +991,7 @@ a {
   font-size: 22px;
   line-height: 22px;
   letter-spacing: 2px;
+  width: 33%;
 }
 .copyright__link:hover {
   -webkit-transition: 0.5s;
