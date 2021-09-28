@@ -1,7 +1,5 @@
 export function popup(className) {
 
-  console.log("+10 = дизайн, оформление");
-
   let popup__under = document.createElement('div');
   popup__under.classList.add(className.substr(1) + '__under');
 
