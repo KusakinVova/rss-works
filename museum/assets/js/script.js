@@ -1,5 +1,7 @@
-import { galleryMix } from './gallery.js';
+import { gallery } from './gallery.js';
+import { popup } from './popup.js';
 
-galleryMix();
+gallery();
+popup('.popup');
 
 console.log("Hello World!");
