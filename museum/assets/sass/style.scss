@@ -5,6 +5,7 @@
 $bg_dark: #030303;
 $text_for_bg_dark: #ffffff;
 $dark_red: #710707;
+$light_red: #740c11;
 $font_gold: #9d8665;
 $color_gold2: #d2b183;
 $font_black: #000000;
@@ -296,6 +297,7 @@ a {
     position: absolute;
     bottom: -55px;
     right: 0;
+
   }
 
   &__controlnumb {
@@ -336,6 +338,8 @@ a {
     height: 8px;
     background-color: $text_for_bg_dark;
     cursor: pointer;
+    border: none;
+    padding: 0;
 
     @include transition;
 
@@ -681,6 +685,8 @@ a {
     height: 12px;
     width: 10px;
     background-color: $color_grey3;
+    border: none;
+    padding: 0;
 
     @include transition;
 
@@ -1019,8 +1025,52 @@ a {
     padding: 91px 235px;
   }
 
-  &__logo {
+  &__form {
+    display: flex;
+    gap: 0 40px;
+  }
+}
 
+.buytform {
+  &__leftaside {
+    max-width: 400px;
+    // height: 100%;
+  }
+
+  &__rightaside {
+    max-width: 530px;
+    padding: 25px 30px;
+  }
+
+  &__border {
+    border: 1px solid $bg_dark;
+  }
+
+  &__logo {
+    height: 41px;
+    width: 85px;
+  }
+
+  &__title {
+    font-size: 50px;
+    line-height: 55px;
+    text-transform: uppercase;
+    color: $font_gold;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    line-height: 21px;
+    color: $dark_red;
+  }
+
+  &__line {
+    background-color: $light_red;
+    height: 1px;
+
+    &_m {
+      height: 3px;
+    }
   }
 }
 

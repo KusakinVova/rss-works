@@ -60,8 +60,8 @@
               <li class="slider__controldots_dot"></li>
             </ul>
             <div class="slider__controlarrows">
-              <div class="slider__controlarrow slider__controlarrow_left"></div>
-              <div class="slider__controlarrow slider__controlarrow_right"></div>
+              <button class="slider__controlarrow slider__controlarrow_left"></button>
+              <button class="slider__controlarrow slider__controlarrow_right"></button>
             </div>
           </div>
         </div>
@@ -174,7 +174,7 @@
             </div>
           </div>
           <div class="playlist__control">
-            <div class="control__arrow control__arrow_left"></div>
+            <button class="control__arrow control__arrow_left"></button>
             <ul class="control__dots">
               <li class="control__dot control__dot_active"></li>
               <li class="control__dot"></li>
@@ -182,7 +182,7 @@
               <li class="control__dot"></li>
               <li class="control__dot"></li>
             </ul>
-            <div class="control__arrow control__arrow_right"></div>
+            <button class="control__arrow control__arrow_right"></button>
           </div>
         </div>
       </div>
@@ -256,10 +256,35 @@
           <form action="#" class="buytickets__form">
             <div class="buytform__leftaside">
               <img src="./assets/svg/logo-louvre-gold.svg" alt="" class="buytform__logo">
-              <div class="buytform__title">Booking tickets</div>
+              <h2 class="buytform__title">Booking tickets</h2>
               <div class="buytform__subtitle">Tour to Louvre</div>
+              <div class="buytform__line buytform__line_m"></div>
+
+              <div class="buytform__group">
+                <input type="date" class="buytform__input" name="date" placeholder="Date">
+                <input type="time" class="buytform__input" name="time" placeholder="Time">
+              </div>
+              <div class="buytform__group">
+                <input type="text" class="buytform__input" name="name"  placeholder="Name">
+              </div>
+              <div class="buytform__group">
+                <input type="email" class="buytform__input" name="email" placeholder="E-mail">
+              </div>
+              <div class="buytform__group">
+                <input type="text" class="buytform__input" name="phone" placeholder="Phone">
+              </div>
+              <div class="buytform__group">
+                <select class="buytform__select" name="ticket type">
+                  <option value="1">Permanent exhibition</option>
+                  <option value="2">Temporary exhibition</option>
+                  <option value="3">Combined Admission</option>
+                </select>
+              </div>
             </div>
-            <div class="buytform__rightaside"></div>
+            <div class="buytform__rightaside buytform__border">
+              <div class="buytform__line"></div>
+              <button class="buytform__submit" type="submit" onclick="return false">Book</button>
+            </div>
           </form>
         </div>
       </div>

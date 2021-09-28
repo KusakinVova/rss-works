@@ -285,6 +285,8 @@ a {
   height: 8px;
   background-color: #ffffff;
   cursor: pointer;
+  border: none;
+  padding: 0;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -568,6 +570,8 @@ a {
   height: 12px;
   width: 10px;
   background-color: #999999;
+  border: none;
+  padding: 0;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -858,6 +862,44 @@ a {
   box-sizing: border-box;
   padding: 91px 235px;
 }
+.buytickets__form {
+  display: flex;
+  gap: 0 40px;
+}
+
+.buytform__leftaside {
+  max-width: 400px;
+}
+.buytform__rightaside {
+  max-width: 530px;
+  padding: 25px 30px;
+}
+.buytform__border {
+  border: 1px solid #030303;
+}
+.buytform__logo {
+  height: 41px;
+  width: 85px;
+}
+.buytform__title {
+  font-size: 50px;
+  line-height: 55px;
+  text-transform: uppercase;
+  color: #9d8665;
+}
+.buytform__subtitle {
+  font-size: 18px;
+  line-height: 21px;
+  color: #710707;
+}
+.buytform__line {
+  background-color: #740c11;
+  height: 1px;
+}
+.buytform__line_m {
+  height: 3px;
+}
+
 .contacts__sec {
   padding-bottom: 70px;
 }
