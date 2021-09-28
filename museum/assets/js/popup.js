@@ -35,14 +35,14 @@ export function popup(className) {
 
   function fadeOut(el, speed) {
     let step = 5 / speed;
-    console.log(el);
+    const el_width = -parseInt(getCssProperty(className, 'width'));
     let interval = setInterval(function() {
-        let width_val = parseInt(getCssProperty(className, 'width'));
         let left_val = parseInt(getCssProperty(className, 'left'));
-        if (left_val < -width_val){
+        if (left_val < el_width){
             clearInterval(interval);
         }
-        el.style.left = left_val - step + 'px';
+        left_val = left_val - step;
+        el.style.left = left_val + 'px';
     }, speed / 10);
   }
 
@@ -50,11 +50,11 @@ export function popup(className) {
     let step = 5 / speed;
     const clientWidth = document.documentElement.clientWidth;
     const el_width = parseInt(getCssProperty(className, 'width'));
-    const el_left_max = clientWidth/2 - el_width/2;
+    const el_left_max = parseInt(clientWidth/2 - el_width/2);
     let interval = setInterval(function() {
         let left_val = parseInt(getCssProperty(className, 'left'));
         if (left_val >= el_left_max){
-            clearInterval(interval);
+          clearInterval(interval);
         }
         left_val = left_val + step;
         if(left_val > el_left_max) left_val = el_left_max;
