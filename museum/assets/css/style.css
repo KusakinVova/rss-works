@@ -825,7 +825,7 @@ a {
 }
 
 .popup {
-  left: calc(50% - 720px);
+  left: -100%;
   top: calc(50% - 422.5px);
   position: fixed;
   width: 1440px;
