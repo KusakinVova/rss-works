@@ -260,10 +260,10 @@
               <div class="buytform__subtitle11 buytform__borderbottom buytform__borderbottom_m">Tour to Louvre</div>
               <div class="buytform__group buytform__group_double">
                 <div class="buytform__inputblock buytform__inputblock_date">
-                  <input type="date" class="buytform__input" name="date" placeholder="Date">
+                  <input type="date" class="buytform__input" name="date" >
                 </div>
                 <div class="buytform__inputblock buytform__inputblock_time">
-                  <input type="time" class="buytform__input" name="time" placeholder="Time">
+                  <input type="time" class="buytform__input" name="time">
                 </div>
               </div>
               <div class="buytform__group">
@@ -309,10 +309,10 @@
                 <div class="buytform__left">
                   <div class="buytform__title2">Overview</div>
                   <div class="buytform__subtitle21">Tour to Louvre</div>
-                  <div class="buytform__ticketsinfo">
-                    <div class="buytform__dateselect">Friday, August 19</div>
-                    <div class="buytform__timeselect">16 : 30</div>
-                    <div class="buytform__typeselect">Temporary exhibition</div>
+                  <div class="buytform__info">
+                    <div class="buytform__infotext buytform__infotext_date">Friday, August 19</div>
+                    <div class="buytform__infotext buytform__infotext_time">16 : 30</div>
+                    <div class="buytform__infotext buytform__infotext_type">Temporary exhibition</div>
                   </div>
                 </div>
                 <div class="buytform__right">
@@ -341,11 +341,11 @@
               <div class="buytform__card">
                 <div class="buytform__card_front">
                   <div class="buytform__card_group">
-                    <lable class="buytform__card_lable">Card number</lable>
+                    <p class="buytform__card_lable">Card number</p>
                     <input type="text" class="buytform__input buytform__card" name="card_number">
                   </div>
                   <div class="buytform__card_group">
-                    <lable class="buytform__card_lable">Expiration date</lable>
+                    <p class="buytform__card_lable">Expiration date</p>
                     <div class="buytform__card_left">
                       <button class="buytform__button buytform__card" type="button" onclick="this.nextElementSibling.stepDown()"></button>
                       <input class="buytform__input buytform__card" type="number" min="1" max="12" value="1" name="card_month">
@@ -358,7 +358,7 @@
                     </div>
                   </div>
                   <div class="buytform__card_group">
-                    <lable class="buytform__card_lable">Cardholder name</lable>
+                    <p class="buytform__card_lable">Cardholder name</p>
                     <input type="text" class="buytform__input buytform__card" name="card_username">
                   </div>
                 </div>
