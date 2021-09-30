@@ -257,13 +257,15 @@
             <div class="buytform__leftaside">
               <img src="./assets/svg/logo-louvre-gold.svg" alt="" class="buytform__logo">
               <h2 class="buytform__title1">Booking tickets</h2>
-              <div class="buytform__subtitle11 buytform__borderbottom buytform__borderbottom_m">Tour to Louvre</div>
+              <div class="buytform__subtitle11 buytform__borderbottom buytform__borderbottom_l">Tour to Louvre</div>
               <div class="buytform__group buytform__group_double">
                 <div class="buytform__inputblock buytform__inputblock_date">
-                  <input type="date" class="buytform__input" name="date" >
+                  <input type="date" class="buytform__input buytform__input_date" name="date" onclick="document.querySelector('.buytform__input_date_text').remove()">
+                  <span class="buytform__input_text buytform__input_date_text" onclick="document.querySelector('.buytform__input_date_text').remove()">Date</span>
                 </div>
                 <div class="buytform__inputblock buytform__inputblock_time">
-                  <input type="time" class="buytform__input" name="time">
+                  <input type="time" class="buytform__input buytform__input_time" name="time" onclick="document.querySelector('.buytform__input_time_text').remove()">
+                  <span class="buytform__input_text buytform__input_time_text" onclick="document.querySelector('.buytform__input_time_text').remove()">Time</span>
                 </div>
               </div>
               <div class="buytform__group">
@@ -290,7 +292,7 @@
                   <div class="buytform__subgroup_left">Basic 18+ (20 €)</div>
                   <div class="buytform__subgroup_right">
                     <button class="buytform__buttoncount buytform__buttoncount_m" type="button" onclick="this.nextElementSibling.stepDown()"></button>
-                    <input class="buytform__input buytform__input_count" type="number" min="0" max="20" value="1" name="basic">
+                    <input class="buytform__input buytform__input_count" type="number" min="0" max="20" value="2" name="basic">
                     <button class="buytform__buttoncount buytform__buttoncount_p" type="button" onclick="this.previousElementSibling.stepUp()"></button>
                   </div>
                 </div>
@@ -298,7 +300,7 @@
                   <div class="buytform__subgroup_left">Senior 65+ (10 €)</div>
                   <div class="buytform__subgroup_right">
                     <button class="buytform__buttoncount buytform__buttoncount_m"  type="button" onclick="this.nextElementSibling.stepDown()"></button>
-                    <input class="buytform__input buytform__input_count" type="number" min="0" max="20" value="1" name="senior">
+                    <input class="buytform__input buytform__input_count" type="number" min="0" max="20" value="2" name="senior">
                     <button class="buytform__buttoncount buytform__buttoncount_p" type="button" onclick="this.previousElementSibling.stepUp()"></button>
                   </div>
                 </div>
@@ -320,20 +322,23 @@
                 </div>
               </div>
               <div class="buytform__countgroup">
-                <div class="buytform__count">
-                  <div>
-                    <span class="buytform__tickes_count">2</span>
-                    <span class="buytform__tickes_title">Basic (20 €)</span>
-                    <span class="buytform__tickes_value">40 €</span>
+                <div class="buytform__count  buytform__borderbottom buytform__borderbottom_m">
+                  <div class="buytform__count_line">
+                    <div class="buytform__count_left">
+                      <span class="buytform__count_tickes">2</span>
+                      <span class="buytform__count_title">Basic (20 €)</span>
+                    </div>
+                    <div class="buytform__count_right"><span class="buytform__count_value">40</span> €</div>
                   </div>
-                  <div>
-                    <span class="buytform__tickes_count">2</span>
-                    <span class="buytform__tickes_title">Senior (10 €)</span>
-                    <span class="buytform__tickes_value">20 €</span>
+                  <div class="buytform__count_line">
+                    <div class="buytform__count_left">
+                      <span class="buytform__count_tickes">2</span>
+                      <span class="buytform__count_title">Senior (10 €)</span>
+                    </div>
+                    <div class="buytform__count_right"><span class="buytform__count_value">20</span> €</div>
                   </div>
                 </div>
-                <div class="buytform__line"></div>
-                <div class="buytform__count_total">
+                <div class="buytform__counttotal">
                   <span class="buytform__counttotal_title">Total:</span>
                   <span class="buytform__counttotal_value">60 €</span>
                 </div>
@@ -342,33 +347,43 @@
                 <div class="buytform__card_front">
                   <div class="buytform__card_group">
                     <p class="buytform__card_lable">Card number</p>
-                    <input type="text" class="buytform__input buytform__card" name="card_number">
+                    <input type="text" class="buytform__inputcard buytform__inputcard_numb" name="card_number">
                   </div>
                   <div class="buytform__card_group">
                     <p class="buytform__card_lable">Expiration date</p>
-                    <div class="buytform__card_left">
-                      <button class="buytform__button buytform__card" type="button" onclick="this.nextElementSibling.stepDown()"></button>
-                      <input class="buytform__input buytform__card" type="number" min="1" max="12" value="1" name="card_month">
-                      <button class="buytform__button buytform__card" type="button" onclick="this.previousElementSibling.stepUp()"></button>
-                    </div>
-                    <div class="buytform__card_right">
-                      <button class="buytform__button buytform__card" type="button" onclick="this.nextElementSibling.stepDown()"></button>
-                      <input class="buytform__input buytform__card" type="number" min="2021" max="2036" value="1" name="card_year">
-                      <button class="buytform__button buytform__card" type="button" onclick="this.previousElementSibling.stepUp()"></button>
+                    <div class="buytform__card_subgroup">
+                      <div class="buytform__card_left">
+                        <button class="buytform__buttoncard buytform__buttoncard_down" type="button" onclick="this.nextElementSibling.stepDown()"></button>
+                        <input class="buytform__inputcard buytform__inputcard_month" type="number" min="1" max="12" value="01" name="card_month">
+                        <button class="buytform__buttoncard buytform__buttoncard_up" type="button" onclick="this.previousElementSibling.stepUp()"></button>
+                      </div>
+                      <div class="buytform__card_right">
+                        <button class="buytform__buttoncard buytform__buttoncard_down" type="button" onclick="this.nextElementSibling.stepDown()"></button>
+                        <input class="buytform__inputcard buytform__inputcard_year" type="number" min="2021" max="2036" value="2021" name="card_year">
+                        <button class="buytform__buttoncard buytform__buttoncard_up" type="button" onclick="this.previousElementSibling.stepUp()"></button>
+                      </div>
                     </div>
                   </div>
                   <div class="buytform__card_group">
                     <p class="buytform__card_lable">Cardholder name</p>
-                    <input type="text" class="buytform__input buytform__card" name="card_username">
+                    <input type="text" class="buytform__inputcard buytform__inputcard_username" name="card_username">
+                  </div>
+                  <div class="buytform__card_imgs">
+                    <img src="./assets/img/visa.png" alt="visa" class="buytform__card_img">
+                    <img src="./assets/img/mastercard.png" alt="mastercard" class="buytform__card_img">
                   </div>
                 </div>
                 <div class="buytform__card_back">
-                  <div class="buytform__card_text"></div>
-                  <input type="password" class="buytform__input buytform__card" name="card_secret">
-                  <div class="buytform__card_text"></div>
+                  <div class="buytform__card_back_content">
+                    <div class="buytform__card_text">CVC/CVV</div>
+                    <input type="password" class="buytform__inputcard buytform__inputcard_secret" name="card_secret">
+                    <div class="buytform__card_text buytform__card_text_small">The last <br> 3 or 4 digits <br> on back<br>of the card</div>
+                  </div>
                 </div>
               </div>
-              <button class="buytform__submit ripple" type="submit" onclick="return false">Book</button>
+              <div class="buytform__blocksubmit">
+                <button class="buytform__submit ripple" type="submit" onclick="return false">Book</button>
+              </div>
             </div>
           </form>
         </div>
