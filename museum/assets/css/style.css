@@ -19,6 +19,10 @@ ul {
   padding: 0;
 }
 
+input {
+  outline: none;
+}
+
 /*
   all
   header
@@ -71,6 +75,10 @@ a {
 
 .text_black {
   color: #000000;
+}
+
+.display_block {
+  display: block !important;
 }
 
 .container {
@@ -853,6 +861,7 @@ a {
   height: 100vh;
   top: 0;
   z-index: 999;
+  cursor: pointer;
 }
 
 .buytickets__block {
@@ -892,6 +901,7 @@ a {
   line-height: 55px;
   text-transform: uppercase;
   color: #9d8665;
+  margin-top: -4px;
 }
 .buytform__title2 {
   font-weight: 500;
@@ -904,7 +914,7 @@ a {
   font-size: 18px;
   line-height: 21px;
   color: #710707;
-  margin: 9px 0 60px;
+  margin: 13px 0 60px;
   padding: 0 0 10px;
 }
 .buytform__subtitle12 {
@@ -1076,6 +1086,54 @@ a {
 .buytform__input_count::-webkit-outer-spin-button, .buytform__input_count::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+.buytform__select {
+  display: none;
+}
+.buytform__selectstyle {
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 21px;
+}
+.buytform__selectstyle::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 15px;
+  display: block;
+  width: 17px;
+  height: 17px;
+  background-image: url("../svg/form/arrow-down.svg");
+  background-repeat: no-repeat;
+}
+.buytform__selectstyle.active::before {
+  transform: rotate(180deg);
+}
+.buytform__selectstyle_value, .buytform__selectstyle_val {
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  padding: 12px 0 0 43px;
+}
+.buytform__selectstyle_val {
+  border: 1px solid #030303;
+  background-image: url("../svg/form/ballot.svg");
+  background-repeat: no-repeat;
+  background-position: 15px 15px;
+  background-size: 15px 15px;
+}
+.buytform__selectstyle_list {
+  display: none;
+  width: 100%;
+  position: absolute;
+  border: 1px solid #030303;
+  box-sizing: border-box;
+  border-top: none;
+  background-color: #ffffff;
+}
+.buytform__selectstyle_value:hover {
+  background-color: #e7e7e7;
 }
 .buytform__count {
   padding: 2px 0 9px;

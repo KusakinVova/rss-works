@@ -23,11 +23,11 @@ export function popup(className) {
   });
 
   function popupClose(el) {
-    fadeOut(el, 0.1);
+    fadeOut(el, 0.5);
   }
 
   function popupOpen(el) {
-    fadeIn(el, 0.1);
+    fadeIn(el, 0.5);
   }
 
 

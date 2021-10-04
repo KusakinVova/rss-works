@@ -11,7 +11,8 @@ export function ripple(className) {
           const buttonLeft = e.target.offsetLeft;
 
           const xInside = x - buttonLeft - 170;
-          const yInside = y - buttonTop + 85;
+          // const yInside = y - buttonTop + 85;
+          const yInside = y - buttonTop - 40;
 
           const circle = document.createElement('span');
           circle.classList.add('circle');

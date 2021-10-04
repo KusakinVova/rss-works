@@ -92,6 +92,10 @@ a {
   color: $font_black;
 }
 
+.display_block {
+  display: block !important;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 15px;
@@ -1014,6 +1018,7 @@ a {
     height: 100vh;
     top: 0;
     z-index: 999;
+    cursor: pointer;
   }
 }
 
@@ -1063,6 +1068,7 @@ a {
     line-height: 55px;
     text-transform: uppercase;
     color: $font_gold;
+    margin-top: -4px;
   }
 
   &__title2 {
@@ -1077,7 +1083,7 @@ a {
     font-size: 18px;
     line-height: 21px;
     color: $dark_red;
-    margin: 9px 0 60px;
+    margin: 13px 0 60px;
     padding: 0 0 10px;
   }
 
@@ -1291,6 +1297,67 @@ a {
         margin: 0;
       }
     }
+  }
+
+  &__select {
+    display: none;
+  }
+
+  &__selectstyle {
+    position: relative;
+    cursor: pointer;
+    font-size: $font_size_s;
+    line-height: 21px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      right: 15px;
+      display: block;
+      width: 17px;
+      height: 17px;
+      background-image: url("../svg/form/arrow-down.svg");
+      background-repeat: no-repeat;
+    }
+
+    &.active::before {
+      // @include transition;
+      transform: rotate(180deg);
+    }
+
+    &_value,
+    &_val {
+      width: 100%;
+      height: 45px;
+      box-sizing: border-box;
+      padding: 12px 0 0 43px;
+    }
+
+    &_val {
+      border: 1px solid $bg_dark;
+      background-image: url("../svg/form/ballot.svg");
+      background-repeat: no-repeat;
+      background-position: 15px 15px;
+      background-size: 15px 15px;
+    }
+
+    &_list {
+      display: none;
+      width: 100%;
+      position: absolute;
+      border: 1px solid $bg_dark;
+      box-sizing: border-box;
+      border-top: none;
+      background-color: $text_for_bg_dark;
+    }
+
+    &_value {
+      &:hover{
+        background-color: #e7e7e7;
+      }
+    }
+
   }
 
   &__count {
