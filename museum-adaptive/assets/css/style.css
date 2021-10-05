@@ -189,7 +189,7 @@ a {
 }
 .headernav__list {
   display: flex;
-  width: 775px;
+  max-width: 775px;
   justify-content: center;
 }
 .headernav__link {
@@ -240,7 +240,7 @@ a {
   padding: 0;
 }
 .welcome__info {
-  width: 598px;
+  max-width: 598px;
   position: relative;
   z-index: 2;
   padding: 150px 0 0;
@@ -260,7 +260,7 @@ a {
 }
 .welcome__button {
   display: flex;
-  width: 360px;
+  max-width: 360px;
   height: 75px;
   margin-top: 74px;
   border-radius: 10px;
@@ -301,7 +301,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
   height: 119px;
   background-color: #030303;
   position: absolute;
@@ -404,14 +405,14 @@ a {
   display: block;
   margin-top: 10px;
   height: 2px;
-  width: 300px;
+  max-width: 300px;
   background-color: #710707;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 .visiting__item:hover .visiting__item-title::after {
-  width: 440px;
+  max-width: 440px;
 }
 .visiting__item-subtitle {
   margin-top: 11px;
@@ -454,7 +455,8 @@ a {
   color: #caaa7d;
 }
 .explore__imgs {
-  width: 720px;
+  width: 100%;
+  max-width: 720px;
   margin-top: 14px;
   height: 700px;
   display: flex;
@@ -462,7 +464,8 @@ a {
 }
 .explore__img_before {
   height: 100%;
-  width: 440px;
+  max-width: 440px;
+  width: 100%;
   background-image: url("../img/explore-slider/before.jpg");
 }
 .explore__img_arrow {
@@ -477,7 +480,8 @@ a {
 }
 .explore__img_after {
   height: 100%;
-  width: 280px;
+  max-width: 280px;
+  width: 100%;
   background-image: url("../img/explore-slider/after.jpg");
   background-position: right;
 }
@@ -883,7 +887,8 @@ a {
   left: -1440px;
   top: calc(50% - 422.5px);
   position: fixed;
-  width: 1440px;
+  max-width: 1440px;
+  width: 100%;
   height: 845px;
   z-index: 1000;
   display: flex;
@@ -1231,7 +1236,8 @@ a {
   margin-bottom: 15px;
 }
 .buytform__card_front {
-  width: 360px;
+  max-width: 360px;
+  width: 100%;
   height: 211px;
   border-radius: 5px;
   background-color: #a4a4a3;
@@ -1245,7 +1251,8 @@ a {
   border-radius: 5px;
   top: 30px;
   right: 0;
-  width: 360px;
+  max-width: 360px;
+  width: 100%;
   height: 211px;
   background-color: #939393;
   z-index: 1;
@@ -1448,10 +1455,12 @@ a {
   padding: 75px 0 40px;
 }
 .footer__nav {
-  width: 620px;
+  max-width: 620px;
+  width: 100%;
 }
 .footer__social {
-  width: 336px;
+  max-width: 336px;
+  width: 100%;
   align-self: flex-end;
 }
 .footer__logo {
@@ -1467,7 +1476,8 @@ a {
   align-content: flex-start;
 }
 .nav__item {
-  width: 260px;
+  max-width: 260px;
+  width: 100%;
 }
 .nav__link {
   font-weight: 200;
