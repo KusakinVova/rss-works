@@ -84,30 +84,21 @@ a {
 .container {
   margin: 0 auto;
   padding: 0 15px;
+  max-width: 1440px;
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1024px) {
   .container {
-    max-width: 540px;
+    max-width: 984px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   .container {
-    max-width: 720px;
+    max-width: 728px;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 420px) {
   .container {
-    max-width: 960px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .container {
-    max-width: 1440px;
+    max-width: 380px;
   }
 }
 
@@ -140,6 +131,62 @@ a {
   height: 150px;
 }
 
+@media screen and (max-width: 1024px) {
+  .headernav__burger span {
+    top: 50%;
+    -webkit-transform: scale(1) translate(0px, -50%);
+    transform: scale(1) translate(0px, -50%);
+  }
+}
+.headernav__burger::before {
+  top: 0;
+}
+.headernav__burger::after {
+  bottom: 0;
+}
+.headernav__burger::before, .headernav__burger::after {
+  content: "";
+}
+@media screen and (max-width: 1024px) {
+  .headernav__burger::before, .headernav__burger::after, .headernav__burger span {
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    background-color: #ffffff;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .headernav__burger {
+    z-index: 25;
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 18px;
+    top: -2px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .headernav {
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    position: fixed;
+    top: 0;
+    left: -150%;
+    width: 25%;
+    padding: 162px 30px 30px 55px;
+    overflow: auto;
+    z-index: 5;
+    height: 714px;
+    background: rgba(0, 0, 0, 0.904);
+  }
+}
 .headernav__list {
   display: flex;
   width: 775px;
@@ -833,7 +880,7 @@ a {
 }
 
 .popup {
-  left: -100%;
+  left: -1440px;
   top: calc(50% - 422.5px);
   position: fixed;
   width: 1440px;

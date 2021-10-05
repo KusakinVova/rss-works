@@ -22,10 +22,9 @@ $font_size_l: 28px;
 $font_size_xl: 32px;
 $font_size_xxxl: 80px;
 
-$media_queries_mobile: 576px;
+$media_queries_mobile: 420px;
 $media_queries_tablet: 768px;
-$media_queries_tablet2: 992px;
-$media_queries_desktop: 1200px;
+$media_queries_desktop: 1024px;
 $media_queries_desktop2: 1500px;
 
 @mixin transition {
@@ -99,25 +98,22 @@ a {
 .container {
   margin: 0 auto;
   padding: 0 15px;
+  max-width: 1440px;
+
+  // @media screen and (max-width: $media_queries_desktop2) {
+  //   max-width: 1440px;
+  // }
+
+  @media screen and (max-width: $media_queries_desktop) {
+    max-width: 984px;
+  }
+
+  @media screen and (max-width: $media_queries_tablet) {
+    max-width: 728px;
+  }
 
   @media screen and (max-width: $media_queries_mobile) {
-    max-width: 540px;
-  }
-
-  @media screen and (min-width: $media_queries_tablet) {
-    max-width: 720px;
-  }
-
-  @media screen and (min-width: $media_queries_tablet2) {
-    max-width: 960px;
-  }
-
-  @media screen and (min-width: $media_queries_desktop) {
-    max-width: 1140px;
-  }
-
-  @media screen and (min-width: $media_queries_desktop2) {
-    max-width: 1440px;
+    max-width: 380px;
   }
 }
 
@@ -153,7 +149,66 @@ a {
   height: 150px;
 }
 
+.headernav__burger {
+  & span {
+    @media screen and (max-width: $media_queries_desktop) {
+      top: 50%;
+      -webkit-transform: scale(1) translate(0px, -50%);
+      transform: scale(1) translate(0px, -50%);
+    }
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+  }
+
+  &::before,
+  &::after,
+  & span {
+    @media screen and (max-width: $media_queries_desktop) {
+      @include transition;
+      left: 0;
+      position: absolute;
+      height: 10%;
+      width: 100%;
+      background-color: #ffffff;
+    }
+  }
+
+  @media screen and (max-width: $media_queries_desktop) {
+    z-index: 25;
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 18px;
+    top: -2px;
+    cursor: pointer;
+  }
+}
+
 .headernav {
+  @media screen and (max-width: $media_queries_desktop) {
+    @include transition;
+    position: fixed;
+    top: 0;
+    left: -150%;
+    width: 25%;
+    padding: 162px 30px 30px 55px;
+    overflow: auto;
+    z-index: 5;
+    height: 714px;
+    background: rgba(0, 0, 0, 0.904);
+  }
+
   &__list {
     display: flex;
     width: 775px;
@@ -989,7 +1044,7 @@ a {
 
 .popup {
   // left: calc(50% - 720px);
-  left: -100%;
+  left: -1440px;
   top: calc(50% - 422.5px);
   position: fixed;
   width: 1440px;
