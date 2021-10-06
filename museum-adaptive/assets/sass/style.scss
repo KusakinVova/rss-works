@@ -2011,6 +2011,10 @@ a {
     font-size: $font_size_xl;
     line-height: 37px;
     color: #030303;
+
+    @media screen and (max-width: $media_queries_tablet) {
+      margin: 13px 0 0;
+    }
   }
 
   &__card {

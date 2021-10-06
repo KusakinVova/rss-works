@@ -1924,6 +1924,11 @@ a {
   line-height: 37px;
   color: #030303;
 }
+@media screen and (max-width: 768px) {
+  .buytform__counttotal {
+    margin: 13px 0 0;
+  }
+}
 .buytform__card {
   margin: 12px 0 56px;
   position: relative;
