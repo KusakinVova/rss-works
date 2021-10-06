@@ -476,7 +476,7 @@ a {
       margin-right: 46px;
     }
 
-    @media screen and (max-width: $media_queries_desktop) {
+    @media screen and (max-width: $media_queries_tablet) {
       margin: 0;
     }
 
@@ -491,7 +491,7 @@ a {
       margin: 0px 47px 0 0;
     }
 
-    @media screen and (max-width: $media_queries_desktop) {
+    @media screen and (max-width: $media_queries_tablet) {
       margin: 0;
     }
 
@@ -780,8 +780,7 @@ a {
       margin: 57px auto 0;
     }
     @media screen and (max-width: $media_queries_tablet) {
-      margin: 0;
-      height: 705px;
+      margin: 0 0 5px;
       max-width: none;
     }
   }

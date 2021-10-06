@@ -453,7 +453,7 @@ a {
     margin-right: 46px;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .slider__controlnumb {
     margin: 0;
   }
@@ -468,7 +468,7 @@ a {
     margin: 0px 47px 0 0;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .slider__controldots {
     margin: 0;
   }
@@ -751,8 +751,7 @@ a {
 }
 @media screen and (max-width: 768px) {
   .explore__imgs {
-    margin: 0;
-    height: 705px;
+    margin: 0 0 5px;
     max-width: none;
   }
 }
