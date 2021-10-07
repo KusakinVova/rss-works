@@ -3,11 +3,13 @@ import { popup } from './popup.js';
 import { player } from './player.js';
 import { ripple } from './ripple.js';
 import { select } from './select.js';
+import { menu } from './menu.js';
 
 gallery();
 popup('.popup');
 player();
 ripple('.ripple');
+menu('.headernav', '.headernav__burger', '.welcome__info');
 select('.buytform__selectstyle');
 
 let console_style = 'color: #ecb830; font-size: 14px';
