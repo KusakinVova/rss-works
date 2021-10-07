@@ -206,7 +206,7 @@ a {
   //   height: 18px;
   //   cursor: pointer;
   // }
-  @media screen and (min-width: $media_queries_desktop) {
+  @media screen and (min-width: $media_queries_desktop2) {
     display: none;
   }
 
@@ -2024,13 +2024,10 @@ a {
 }
 
 .popup {
-  // left: calc(50% - 720px);
-  left: -1440px;
-  top: calc(50% - 422.5px);
+  left: -200%;
+  top: 0;
   position: fixed;
-  // max-width: 1440px;
   width: 100%;
-  height: 845px;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -2038,25 +2035,20 @@ a {
   background-color: $text_for_bg_dark;
   box-sizing: border-box;
   overflow: auto;
-  max-width: 590px;
-  // @media screen and (max-width: $media_queries_tablet) {
-  //   max-width: 590px;
-  // }
 
   @media screen and (min-width: $media_queries_tablet) {
+    max-width: 590px;
   }
 
   @media screen and (min-width: $media_queries_desktop) {
+    max-width: none;
   }
 
   @media screen and (min-width: $media_queries_desktop2) {
-  }
-
-  @media screen and (min-width: $media_queries_desktop) {
     max-width: 1440px;
-    top: 10px;
+    top: calc(50% - 422.5px);
     overflow: auto;
-    height: 100%;
+    height: 845px;
   }
 
   &__close {
@@ -2065,18 +2057,13 @@ a {
     background-image: url("../svg/close.svg");
     cursor: pointer;
     position: absolute;
-    // top: 30px;
-    // right: 30px;
     top: 25px;
     right: 30px;
-    // @media screen and (max-width: $media_queries_desktop) {
-    //   top: 25px;
-    //   right: 9px;
-    // }
-    // @media screen and (max-width: $media_queries_tablet) {
-    //   top: 25px;
-    //   right: 30px;
-    // }
+
+    @media screen and (min-width: $media_queries_mobile) {
+      top: 30px;
+      right: 11px;
+    }
 
     @media screen and (min-width: $media_queries_tablet) {
       top: 25px;
@@ -2107,19 +2094,11 @@ a {
 
 .buytickets {
   &__block {
+    height: 100vh;
     width: 100%;
-    height: 845px;
     background-color: $text_for_bg_dark;
     position: relative;
     box-sizing: border-box;
-    // padding: 91px 235px;
-    padding: 77px 30px;
-    // @media screen and (max-width: $media_queries_desktop) {
-    //   padding: 71px 8px 0 6px;
-    // }
-    // @media screen and (max-width: $media_queries_tablet) {
-    //   padding: 77px 30px;
-    // }
 
     @media screen and (min-width: $media_queries_tablet) {
       padding: 77px 30px;
@@ -2131,16 +2110,22 @@ a {
 
     @media screen and (min-width: $media_queries_desktop2) {
       padding: 91px 235px;
+      height: 845px;
     }
   }
 
   &__form {
-    // display: flex;
-    // gap: 0 40px;
     display: block;
-    // @media screen and (max-width: $media_queries_tablet) {
-    //   display: block;
-    // }
+    padding: 30px 0;
+
+    @media screen and (min-width: $media_queries_mobile) {
+      padding: 80px 10px;
+    }
+
+    @media screen and (min-width: $media_queries_tablet) {
+      padding: 3px 0px;
+    }
+
     @media screen and (min-width: $media_queries_desktop) {
       display: flex;
       gap: 0 40px;
@@ -2205,15 +2190,29 @@ a {
   }
 
   &__img {
-    margin-top: -1px;
+    @media screen and (min-width: $media_queries_mobile) {
+      max-width: 120px;
+      margin: -4px -1px 0 0;
+    }
+
+    @media screen and (min-width: $media_queries_tablet) {
+      max-width: none;
+      margin: 0;
+    }
   }
 
   &__title1 {
-    font-size: 50px;
-    line-height: 55px;
     text-transform: uppercase;
     color: $font_gold;
     margin-top: -4px;
+    font-size: 32px;
+    line-height: 35px;
+
+    @media screen and (min-width: $media_queries_tablet) {
+      font-size: 50px;
+      line-height: 55px;
+    }
+
   }
 
   &__title2 {
@@ -2303,8 +2302,17 @@ a {
 
   &__group {
     &_double {
-      display: flex;
-      justify-content: space-between;
+      @media screen and (min-width: $media_queries_mobile) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &_double2 {
+      @media screen and (min-width: $media_queries_tablet) {
+        display: flex;
+        justify-content: space-between;
+      }
     }
 
     &_padding {
@@ -2322,8 +2330,13 @@ a {
     }
 
     &_left {
-      font-size: $font_size_s;
-      line-height: 21px;
+      font-size: 16px;
+      line-height: 19px;
+
+      @media screen and (min-width: $media_queries_mobile) {
+        font-size: $font_size_s;
+        line-height: 21px;
+      }
     }
 
     &_right {
@@ -2372,7 +2385,10 @@ a {
       // @media screen and (max-width: $media_queries_tablet) {
       //   max-width: 251px;
       // }
-      max-width: 251px;
+
+      @media screen and (min-width: $media_queries_tablet) {
+        max-width: 251px;
+      }
 
       @media screen and (min-width: $media_queries_desktop) {
         max-width: 190px;
@@ -2556,15 +2572,14 @@ a {
   &__counttotal {
     display: flex;
     justify-content: space-between;
-    // margin: 10px 0 0;
     font-size: $font_size_xl;
     line-height: 37px;
     color: #030303;
-
     margin: 13px 0 0;
-    // @media screen and (max-width: $media_queries_tablet) {
-    //   margin: 13px 0 0;
-    // }
+
+    @media screen and (min-width: $media_queries_mobile) {
+      margin: 12px 0 11px;
+    }
 
     @media screen and (min-width: $media_queries_desktop) {
       margin: 10px 0 0;
@@ -2572,8 +2587,12 @@ a {
   }
 
   &__card {
-    margin: 12px 0 56px;
     position: relative;
+    margin: 12px 0 40px;
+
+    @media screen and (min-width: $media_queries_tablet) {
+      margin: 12px 0 56px;
+    }
 
     &_imgs {
       position: absolute;
@@ -2589,17 +2608,21 @@ a {
     &_front {
       max-width: 360px;
       width: 100%;
-      height: 211px;
+      height: 255px;
       border-radius: 5px;
       background-color: #a4a4a3;
       padding: 15px 20px;
       box-sizing: border-box;
       position: relative;
       z-index: 2;
+
+      @media screen and (min-width: $media_queries_mobile) {
+        height: 211px;
+      }
     }
 
     &_back {
-      position: absolute;
+
       border-radius: 5px;
       top: 30px;
       right: 0;
@@ -2608,13 +2631,29 @@ a {
       height: 211px;
       background-color: #939393;
       z-index: 1;
+      padding: 25px 0 0;
+      margin: 10px 0 0;
+
+      @media screen and (min-width: $media_queries_mobile) {
+        position: relative;
+        padding: 25px 0 0;
+        margin: 24px 0 0;
+        top: 0;
+        box-sizing: border-box;
+      }
+
+      @media screen and (min-width: $media_queries_tablet) {
+        position: absolute;
+        margin: 31px 0 0;
+      }
 
       &::before {
         content: "";
         display: block;
         background-color: #161615;
         height: 45px;
-        margin: 25px 0 15px;
+        margin: 0 0 15px;
+
       }
 
       &_content {
@@ -2660,8 +2699,13 @@ a {
     }
 
     &_left {
-      float: left;
-      margin-right: 15px;
+      margin-bottom: 10px;
+      @media screen and (min-width: $media_queries_mobile) {
+        float: left;
+        margin-bottom: 0px;
+        margin-right: 15px;
+      }
+
     }
 
     &_left,
@@ -2685,7 +2729,11 @@ a {
     box-sizing: border-box;
 
     &_numb {
-      max-width: 215px;
+      max-width: 125px;
+
+      @media screen and (min-width: $media_queries_mobile) {
+        max-width: 215px;
+      }
     }
 
     &_month,

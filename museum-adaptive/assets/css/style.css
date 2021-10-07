@@ -188,7 +188,7 @@ a {
     display: block;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1500px) {
   .headernav__burger {
     display: none;
   }
@@ -2033,11 +2033,10 @@ a {
 }
 
 .popup {
-  left: -1440px;
-  top: calc(50% - 422.5px);
+  left: -200%;
+  top: 0;
   position: fixed;
   width: 100%;
-  height: 845px;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -2045,14 +2044,23 @@ a {
   background-color: #ffffff;
   box-sizing: border-box;
   overflow: auto;
-  max-width: 590px;
+}
+@media screen and (min-width: 768px) {
+  .popup {
+    max-width: 590px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .popup {
+    max-width: none;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .popup {
     max-width: 1440px;
-    top: 10px;
+    top: calc(50% - 422.5px);
     overflow: auto;
-    height: 100%;
+    height: 845px;
   }
 }
 .popup__close {
@@ -2063,6 +2071,12 @@ a {
   position: absolute;
   top: 25px;
   right: 30px;
+}
+@media screen and (min-width: 420px) {
+  .popup__close {
+    top: 30px;
+    right: 11px;
+  }
 }
 @media screen and (min-width: 768px) {
   .popup__close {
@@ -2093,12 +2107,11 @@ a {
 }
 
 .buytickets__block {
+  height: 100vh;
   width: 100%;
-  height: 845px;
   background-color: #ffffff;
   position: relative;
   box-sizing: border-box;
-  padding: 77px 30px;
 }
 @media screen and (min-width: 768px) {
   .buytickets__block {
@@ -2113,10 +2126,22 @@ a {
 @media screen and (min-width: 1500px) {
   .buytickets__block {
     padding: 91px 235px;
+    height: 845px;
   }
 }
 .buytickets__form {
   display: block;
+  padding: 30px 0;
+}
+@media screen and (min-width: 420px) {
+  .buytickets__form {
+    padding: 80px 10px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .buytickets__form {
+    padding: 3px 0px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .buytickets__form {
@@ -2156,15 +2181,30 @@ a {
   height: 41px;
   width: 85px;
 }
-.buytform__img {
-  margin-top: -1px;
+@media screen and (min-width: 420px) {
+  .buytform__img {
+    max-width: 120px;
+    margin: -4px -1px 0 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .buytform__img {
+    max-width: none;
+    margin: 0;
+  }
 }
 .buytform__title1 {
-  font-size: 50px;
-  line-height: 55px;
   text-transform: uppercase;
   color: #9d8665;
   margin-top: -4px;
+  font-size: 32px;
+  line-height: 35px;
+}
+@media screen and (min-width: 768px) {
+  .buytform__title1 {
+    font-size: 50px;
+    line-height: 55px;
+  }
 }
 .buytform__title2 {
   font-weight: 500;
@@ -2236,9 +2276,17 @@ a {
 .buytform__borderbottom_l {
   border-bottom-width: 3px;
 }
-.buytform__group_double {
-  display: flex;
-  justify-content: space-between;
+@media screen and (min-width: 420px) {
+  .buytform__group_double {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 768px) {
+  .buytform__group_double2 {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .buytform__group_padding {
   padding: 10px 15px 15px;
@@ -2252,8 +2300,14 @@ a {
   margin: 0 0 18px;
 }
 .buytform__subgroup_left {
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 16px;
+  line-height: 19px;
+}
+@media screen and (min-width: 420px) {
+  .buytform__subgroup_left {
+    font-size: 18px;
+    line-height: 21px;
+  }
 }
 .buytform__subgroup_right {
   display: flex;
@@ -2289,8 +2343,10 @@ a {
   background-repeat: no-repeat;
   background-position: center;
 }
-.buytform__inputblock_time, .buytform__inputblock_date {
-  max-width: 251px;
+@media screen and (min-width: 768px) {
+  .buytform__inputblock_time, .buytform__inputblock_date {
+    max-width: 251px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .buytform__inputblock_time, .buytform__inputblock_date {
@@ -2444,14 +2500,24 @@ a {
   color: #030303;
   margin: 13px 0 0;
 }
+@media screen and (min-width: 420px) {
+  .buytform__counttotal {
+    margin: 12px 0 11px;
+  }
+}
 @media screen and (min-width: 1024px) {
   .buytform__counttotal {
     margin: 10px 0 0;
   }
 }
 .buytform__card {
-  margin: 12px 0 56px;
   position: relative;
+  margin: 12px 0 40px;
+}
+@media screen and (min-width: 768px) {
+  .buytform__card {
+    margin: 12px 0 56px;
+  }
 }
 .buytform__card_imgs {
   position: absolute;
@@ -2465,7 +2531,7 @@ a {
 .buytform__card_front {
   max-width: 360px;
   width: 100%;
-  height: 211px;
+  height: 255px;
   border-radius: 5px;
   background-color: #a4a4a3;
   padding: 15px 20px;
@@ -2473,8 +2539,12 @@ a {
   position: relative;
   z-index: 2;
 }
+@media screen and (min-width: 420px) {
+  .buytform__card_front {
+    height: 211px;
+  }
+}
 .buytform__card_back {
-  position: absolute;
   border-radius: 5px;
   top: 30px;
   right: 0;
@@ -2483,13 +2553,30 @@ a {
   height: 211px;
   background-color: #939393;
   z-index: 1;
+  padding: 25px 0 0;
+  margin: 10px 0 0;
+}
+@media screen and (min-width: 420px) {
+  .buytform__card_back {
+    position: relative;
+    padding: 25px 0 0;
+    margin: 24px 0 0;
+    top: 0;
+    box-sizing: border-box;
+  }
+}
+@media screen and (min-width: 768px) {
+  .buytform__card_back {
+    position: absolute;
+    margin: 31px 0 0;
+  }
 }
 .buytform__card_back::before {
   content: "";
   display: block;
   background-color: #161615;
   height: 45px;
-  margin: 25px 0 15px;
+  margin: 0 0 15px;
 }
 .buytform__card_back_content {
   position: absolute;
@@ -2522,8 +2609,14 @@ a {
   margin-top: 0;
 }
 .buytform__card_left {
-  float: left;
-  margin-right: 15px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 420px) {
+  .buytform__card_left {
+    float: left;
+    margin-bottom: 0px;
+    margin-right: 15px;
+  }
 }
 .buytform__card_left, .buytform__card_right {
   width: 100px;
@@ -2542,7 +2635,12 @@ a {
   box-sizing: border-box;
 }
 .buytform__inputcard_numb {
-  max-width: 215px;
+  max-width: 125px;
+}
+@media screen and (min-width: 420px) {
+  .buytform__inputcard_numb {
+    max-width: 215px;
+  }
 }
 .buytform__inputcard_month, .buytform__inputcard_year {
   max-width: 72px;
