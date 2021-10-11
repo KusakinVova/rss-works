@@ -301,6 +301,30 @@ a {
       @include transition;
     }
   }
+
+  &__imgs {
+    display: grid;
+    grid-template-areas: "a a" "b c";
+
+
+    @media screen and (min-width: $media_queries_desktop) {
+      display: none;
+    }
+  }
+
+  &__img {
+    &:nth-child(1) { grid-area: a;}
+    &:nth-child(2) { grid-area: b;}
+    &:nth-child(3) { grid-area: c;}
+  }
+
+  &__soclist {
+    display: flex;
+
+    @media screen and (min-width: $media_queries_desktop) {
+      display: none;
+    }
+  }
 }
 
 .logo {

@@ -293,6 +293,32 @@ a {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
+.headernav__imgs {
+  display: grid;
+  grid-template-areas: "a a" "b c";
+}
+@media screen and (min-width: 1024px) {
+  .headernav__imgs {
+    display: none;
+  }
+}
+.headernav__img:nth-child(1) {
+  grid-area: a;
+}
+.headernav__img:nth-child(2) {
+  grid-area: b;
+}
+.headernav__img:nth-child(3) {
+  grid-area: c;
+}
+.headernav__soclist {
+  display: flex;
+}
+@media screen and (min-width: 1024px) {
+  .headernav__soclist {
+    display: none;
+  }
+}
 
 .logo img {
   width: 29px;
