@@ -3017,6 +3017,8 @@ a {
     @media screen and (min-width: $media_queries_desktop2) {
       max-width: 960px;
       max-height: none;
+      height: 620px;
+      width: 960px;
     }
 
     & img {

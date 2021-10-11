@@ -60,6 +60,38 @@ function welcome_slider(){
 welcome_slider();
 
 // --------------------------------------------
+// map
+function createMap(){
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYmlnb2QiLCJhIjoiY2t1bjNpeWh5MWp2cTJxbzYydjBseW5pdyJ9.vQCpWdNpmMveX_bxVrqPwA';
+  const map = new mapboxgl.Map({
+      container: 'mapContacts', // container ID
+      style: 'mapbox://styles/mapbox/light-v10', // style URL
+      center: [2.3364, 48.86091], // starting position
+      zoom: 15.75, // starting zoom
+  });
+  map.addControl(new mapboxgl.NavigationControl());
+
+  const markers = {
+    0 : { text: 'Museum marker1', color: '#171717', coordinates : [2.3364, 48.86091] },
+    1 : { text: 'Museum marker2', color: '#757575', coordinates : [2.3333, 48.8602] },
+    2 : { text: 'Museum marker3', color: '#757575', coordinates : [2.3397, 48.8607] },
+    3 : { text: 'Museum marker4', color: '#757575', coordinates : [2.3330, 48.8619] },
+    4 : { text: 'Museum marker5', color: '#757575', coordinates : [2.3365, 48.8625] },
+  };
+
+  for (const [key, value] of Object.entries(markers)) {
+    let mappopup = new mapboxgl.Popup({ offset: 25 }).setText(value.text);
+
+    new mapboxgl.Marker({color: value.color ,draggable: false})
+      .setLngLat(value.coordinates)
+      .setPopup(mappopup)
+      .addTo(map);
+  }
+}
+createMap();
+// --------------------------------------------
+
+
 
 // let console_style = 'color: #ecb830; font-size: 14px';
 // console.log('%c'+ 'Привет!', 'color: #008000; font-size: 24px');

@@ -8,6 +8,7 @@
   <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/splide/splide.min.css">
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -83,7 +84,6 @@
 
         <div class="welcome__slider">
           <div class="slider__slides splide__welcome">
-            <!-- <img src="./assets/img/welcome-slider/1.jpg" alt="" class="slider__slide"> -->
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide"><img src="./assets/img/welcome-slider/1.jpg" alt=""></li>
@@ -460,9 +460,7 @@
             <p class="contacts__text">phone: <span><a class="contacts__link" href="tel:+330140205050">+33(0) 1 40 20 50 50</a></span></p>
             <p class="contacts__text">mail: <span><a class="contacts__link" href="mailto:info@louvre.fr">info@louvre.fr</a></span></p>
           </div>
-          <div class="contacts__map">
-            <img class="contacts__img" src="./assets/img/contacts_map.jpg" alt="Contacts map">
-          </div>
+          <div id="mapContacts" class="contacts__map"></div>
         </div>
       </div>
     </section>
@@ -529,6 +527,7 @@
   </footer>
 
   <script src="./assets/splide/splide.min.js"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
   <script type="module" src="./assets/js/script.js"></script>
 </body>
 </html>

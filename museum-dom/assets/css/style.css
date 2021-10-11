@@ -2929,6 +2929,8 @@ a {
   .contacts__map {
     max-width: 960px;
     max-height: none;
+    height: 620px;
+    width: 960px;
   }
 }
 .contacts__map img {
