@@ -529,6 +529,7 @@ a {
 
 .slider__slides {
   position: relative;
+  cursor: grab;
 }
 @media screen and (min-width: 768px) {
   .slider__slides {
@@ -542,10 +543,10 @@ a {
 }
 @media screen and (min-width: 1500px) {
   .slider__slides {
-    max-width: none;
+    max-width: 1000px;
   }
 }
-.slider__slides::before {
+.slider__slides .splide__slide::before {
   content: "";
   position: absolute;
   height: 100%;
@@ -555,12 +556,12 @@ a {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  .slider__slides::before {
+  .slider__slides .splide__slide::before {
     display: none;
   }
 }
 @media screen and (min-width: 1024px) {
-  .slider__slides::before {
+  .slider__slides .splide__slide::before {
     display: block;
   }
 }

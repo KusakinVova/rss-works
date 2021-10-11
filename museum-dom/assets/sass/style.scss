@@ -532,6 +532,7 @@ a {
 .slider {
   &__slides {
     position: relative;
+    cursor: grab;
 
     @media screen and (min-width: $media_queries_tablet) {
       max-width: none;
@@ -541,10 +542,10 @@ a {
       max-width: 700px;
     }
     @media screen and (min-width: $media_queries_desktop2) {
-      max-width: none;
+      max-width: 1000px;
     }
 
-    &::before {
+    & .splide__slide::before {
       content: "";
       position: absolute;
       height: 100%;
@@ -552,6 +553,7 @@ a {
       left: 0;
       background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
       display: none;
+
       @media screen and (min-width: $media_queries_tablet) {
         display: none;
       }
@@ -559,7 +561,6 @@ a {
       @media screen and (min-width: $media_queries_desktop) {
         display: block;
       }
-
     }
   }
 

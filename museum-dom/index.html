@@ -7,6 +7,7 @@
   <title>museum</title>
   <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/splide/splide.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -81,8 +82,17 @@
         </div>
 
         <div class="welcome__slider">
-          <div class="slider__slides">
-            <img src="./assets/img/welcome-slider/1.jpg" alt="" class="slider__slide">
+          <div class="slider__slides splide__welcome">
+            <!-- <img src="./assets/img/welcome-slider/1.jpg" alt="" class="slider__slide"> -->
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide"><img src="./assets/img/welcome-slider/1.jpg" alt=""></li>
+                <li class="splide__slide"><img src="./assets/img/welcome-slider/2.jpg" alt=""></li>
+                <li class="splide__slide"><img src="./assets/img/welcome-slider/3.jpg" alt=""></li>
+                <li class="splide__slide"><img src="./assets/img/welcome-slider/4.jpg" alt=""></li>
+                <li class="splide__slide"><img src="./assets/img/welcome-slider/5.jpg" alt=""></li>
+              </ul>
+            </div>
           </div>
           <div class="slider__control">
             <div class="slider__controlnumb">
@@ -518,6 +528,7 @@
     </div>
   </footer>
 
+  <script src="./assets/splide/splide.min.js"></script>
   <script type="module" src="./assets/js/script.js"></script>
 </body>
 </html>
