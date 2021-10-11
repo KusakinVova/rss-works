@@ -1063,7 +1063,7 @@ a {
   position: absolute;
   height: 100%;
   background-color: #ffffff;
-  cursor: ew-resize;
+  cursor: col-resize;
   -webkit-mask-image: url("../svg/explore-slider-s.svg");
   mask-image: url("../svg/explore-slider-s.svg");
   width: 20px;

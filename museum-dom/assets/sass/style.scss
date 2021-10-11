@@ -1048,7 +1048,7 @@ a {
     position: absolute;
     height: 100%;
     background-color: $text_for_bg_dark;
-    cursor: ew-resize;
+    cursor: col-resize;
     -webkit-mask-image: url("../svg/explore-slider-s.svg");
     mask-image: url("../svg/explore-slider-s.svg");
     width: 20px;
