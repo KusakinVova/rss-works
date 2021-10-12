@@ -1685,6 +1685,8 @@ a {
   &__item {
     @include transition;
     max-width: 128px;
+    opacity: 0;
+    transform: translate(0, 50%);
 
     @media screen and (min-width: $media_queries_mobile) {
       max-width: 178px;
@@ -1704,6 +1706,11 @@ a {
 
     &_margintop {
       padding-top: 50px;
+    }
+
+    &.show {
+      transform: translate(0, 0);
+      opacity: 1;
     }
   }
 }

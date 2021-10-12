@@ -1726,6 +1726,8 @@ a {
   -o-transition: 0.5s;
   transition: 0.5s;
   max-width: 128px;
+  opacity: 0;
+  transform: translate(0, 50%);
 }
 @media screen and (min-width: 420px) {
   .gallery__item {
@@ -1749,6 +1751,10 @@ a {
 }
 .gallery__item_margintop {
   padding-top: 50px;
+}
+.gallery__item.show {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 @media screen and (min-width: 1500px) {
