@@ -135,6 +135,26 @@ function updateExplorer(){
 }
 updateExplorer();
 // --------------------------------------------
+function goup(){
+  let rootElement = document.documentElement;
+  let mybutton = document.querySelector(".button_goup");
+  mybutton.addEventListener("click", scrollToTop);
+  function scrollToTop(){
+    rootElement.scrollTo({ top: 0, behavior: "smooth"});
+  }
+
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      mybutton.classList.add('show');
+    } else {
+      mybutton.classList.remove('show');
+    }
+  }
+}
+goup();
+// --------------------------------------------
 
 
 alert('Доброжелательный проверяющий! Пожалуйста посмотри в консоль.');

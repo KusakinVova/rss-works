@@ -156,6 +156,41 @@ a {
   text-align: right;
 }
 
+.button_goup {
+  display: inline-block;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+
+  background-image: url(../svg/player-play.svg);
+  background-repeat: no-repeat;
+  background-position: 21px center;
+  background-color: $bg_dark;
+
+  cursor: pointer;
+
+  border: 1px solid $dark_red;
+  border-radius: 100px;
+  transform: rotate(270deg);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+
+  &.show {
+    @include transition;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover {
+    @include transition;
+    background-color: $font_gold;
+    border-color: $bg_dark;
+  }
+}
+
 // ========================================================================================
 // header
 

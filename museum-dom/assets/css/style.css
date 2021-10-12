@@ -150,6 +150,40 @@ a {
   text-align: right;
 }
 
+.button_goup {
+  display: inline-block;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-image: url(../svg/player-play.svg);
+  background-repeat: no-repeat;
+  background-position: 21px center;
+  background-color: #030303;
+  cursor: pointer;
+  border: 1px solid #710707;
+  border-radius: 100px;
+  transform: rotate(270deg);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+}
+.button_goup.show {
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 1;
+  visibility: visible;
+}
+.button_goup:hover {
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #9d8665;
+  border-color: #030303;
+}
+
 .header__container {
   display: flex;
   justify-content: space-between;
