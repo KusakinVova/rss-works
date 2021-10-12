@@ -91,10 +91,53 @@ function createMap(){
 createMap();
 // --------------------------------------------
 // explorer line
+function updateExplorer(){
+  const explore__imgs = document.querySelector('.explore__imgs');
+  const explorer_line = document.querySelector('.explore__img_arrow');
+  const explore__img_before = document.querySelector('.explore__img_before');
+  const explore__img_after = document.querySelector('.explore__img_after');
+
+  let line_position = explorer_line.offsetLeft;
+  let line_width_half = explorer_line.offsetWidth / 2;
+  let block_maxwidth = explore__imgs.offsetWidth;
+  let line_start_pos = line_position + line_width_half;
+  let line_position_old, line_position_new = 0;
+
+  explore__imgs.addEventListener('mouseup', upMouse);
+  document.querySelector('body').addEventListener('mouseup', upMouse);
+
+  function upMouse() {
+    explore__imgs.removeEventListener('mousemove', moveMouse);
+  }
+
+  function downMouse(e) {
+    line_position_old = e.clientX;
+    explore__imgs.addEventListener('mousemove', moveMouse);
+  }
+
+  function moveMouse(e) {
+    line_position_new = e.clientX;
+    line_start_pos -= (line_position_old - line_position_new);
+    if (line_start_pos > block_maxwidth) line_start_pos = block_maxwidth;
+    if (line_start_pos < 0) line_start_pos = 0;
+    updateBlock(line_start_pos);
+    line_position_old = line_position_new;
+  }
+
+  function updateBlock(position) {
+    explorer_line.style.left = (position - line_width_half) + "px";
+    explore__img_before.style.maxWidth = (position) + "px";
+    explore__img_after.style.maxWidth = (block_maxwidth - position) + "px";
+    explorer_line.addEventListener('mousedown', downMouse);
+  }
+
+  updateBlock(line_start_pos);
+}
+updateExplorer();
+// --------------------------------------------
 
 
-
-alert('Доброжелательный проверяющий! Пожалуйста посмотри в консоль.')
+alert('Доброжелательный проверяющий! Пожалуйста посмотри в консоль.');
 console.log('%c'+ 'Привет!', 'color: #008000; font-size: 36px');
 console.log('%c'+ 'По дружески прошу проверить мою работу в последний день кросчека.', 'color: #008000; font-size: 32px');
 console.log('%c'+ 'Просто я из-за работы не успеваю сделать до дедлайна.', 'color: #008000; font-size: 28px');
