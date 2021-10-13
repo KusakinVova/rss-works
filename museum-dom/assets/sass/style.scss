@@ -1232,6 +1232,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
   }
 
   &__controls {
@@ -1261,6 +1262,12 @@ a {
       height: 85px;
       gap: 0 50px;
     }
+
+    &_fullscreen {
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
   }
 
   &__button {
@@ -1287,6 +1294,10 @@ a {
     left: calc(50% - 25px);
     top: calc(50% - 25px);
     background-size: contain;
+
+    &.toggle {
+      display: none;
+    }
 
     @media screen and (min-width: $media_queries_tablet) {
       width: 80px;
@@ -1319,6 +1330,10 @@ a {
       width: 30px;
       height: 30px;
     }
+
+    &.toggle {
+      background-image: url("../svg/player-pause.svg");
+    }
   }
 
   &__button_volume {
@@ -1330,6 +1345,14 @@ a {
       width: 38px;
       height: 30px;
     }
+
+    &.toggle {
+      background-image: url("../svg/player-mute.svg");
+    }
+
+    &.half {
+      background-image: url("../svg/player-volume-half.svg");
+    }
   }
 
   &__button_fullscreen {
@@ -1340,6 +1363,10 @@ a {
     @media screen and (min-width: $media_queries_desktop2) {
       width: 36px;
       height: 36px;
+    }
+
+    &.toggle {
+      background-image: url("../svg/player-fullscreen_exit.svg");
     }
   }
 
