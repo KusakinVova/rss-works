@@ -289,15 +289,15 @@
             <div class="form__leftblock">
               <p class="form__title">Ticket Type</p>
               <p class="form__line">
-                <input class="form__radio" type="radio" id="form_ticket_type1" name="ticket_type" value="permanent_exhibition" checked>
+                <input class="form__radio" type="radio" id="form_ticket_type1" name="ticket_type" value="20" checked onchange="updateSmallForm();">
                 <label class="form__label" for="form_ticket_type1">Permanent exhibition</label>
               </p>
               <p class="form__line">
-                <input class="form__radio" type="radio" id="form_ticket_type2" name="ticket_type" value="temporary_exhibition">
+                <input class="form__radio" type="radio" id="form_ticket_type2" name="ticket_type" value="25" onchange="updateSmallForm();">
                 <label class="form__label" for="form_ticket_type2">Temporary exhibition</label>
               </p>
               <p class="form__line">
-                <input class="form__radio" type="radio" id="form_ticket_type3" name="ticket_type" value="combined_admission">
+                <input class="form__radio" type="radio" id="form_ticket_type3" name="ticket_type" value="40" onchange="updateSmallForm();">
                 <label class="form__label" for="form_ticket_type3">Combined Admission</label>
               </p>
             </div>
@@ -307,17 +307,17 @@
               <div class="form__group">
                 <p class="form__numblable">Basic 18+</p>
                 <div class="form__inputgroup">
-                  <button  class="form__button form__button_minus" type="button" onclick="this.nextElementSibling.stepDown()">–</button>
-                  <input class="form__numb" type="number" name="basic18" id="form__numb_basic18" value="1" min="0" max="20">
-                  <button class="form__button form__button_add" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                  <button  class="form__button form__button_minus" type="button" onclick="this.nextElementSibling.stepDown(); updateSmallForm();">–</button>
+                  <input class="form__numb" type="number" name="basic18" id="form__numb_basic18" value="1" min="0" max="20" data-rate='1'>
+                  <button class="form__button form__button_add" type="button" onclick="this.previousElementSibling.stepUp(); updateSmallForm();">+</button>
                 </div>
               </div>
               <div class="form__group">
                 <p class="form__numblable">Senior 65+</p>
                 <div class="form__inputgroup">
-                  <button  class="form__button form__button_minus" type="button" onclick="this.nextElementSibling.stepDown()">–</button>
-                  <input class="form__numb" type="number" name="senior65" id="form__numb_senior65" value="1" min="0" max="20">
-                  <button class="form__button form__button_add" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                  <button  class="form__button form__button_minus" type="button" onclick="this.nextElementSibling.stepDown(); updateSmallForm();">–</button>
+                  <input class="form__numb" type="number" name="senior65" id="form__numb_senior65" value="1" min="0" max="20" data-rate='0.5'>
+                  <button class="form__button form__button_add" type="button" onclick="this.previousElementSibling.stepUp(); updateSmallForm();">+</button>
                 </div>
               </div>
               <div class="form__sum">Total €<span id="total_sum">220</span></div>
@@ -368,9 +368,9 @@
                     </div>
                   </div>
                   <select class="buytform__select" name="ticket_type">
-                    <option value="1">Permanent exhibition</option>
-                    <option value="2">Temporary exhibition</option>
-                    <option value="3">Combined Admission</option>
+                    <option value="20">Permanent exhibition</option>
+                    <option value="25">Temporary exhibition</option>
+                    <option value="40">Combined Admission</option>
                   </select>
                 </div>
               </div>
@@ -379,17 +379,17 @@
                 <div class="buytform__subgroup">
                   <div class="buytform__subgroup_left">Basic 18+ (20 €)</div>
                   <div class="buytform__subgroup_right">
-                    <button class="buytform__buttoncount buytform__buttoncount_m" type="button" onclick="this.nextElementSibling.stepDown()"></button>
+                    <button class="buytform__buttoncount buytform__buttoncount_m" type="button" onclick="this.nextElementSibling.stepDown();"></button>
                     <input class="buytform__input buytform__input_count" type="number" min="0" max="20" value="2" name="basic">
-                    <button class="buytform__buttoncount buytform__buttoncount_p" type="button" onclick="this.previousElementSibling.stepUp()"></button>
+                    <button class="buytform__buttoncount buytform__buttoncount_p" type="button" onclick="this.previousElementSibling.stepUp();"></button>
                   </div>
                 </div>
                 <div class="buytform__subgroup">
                   <div class="buytform__subgroup_left">Senior 65+ (10 €)</div>
                   <div class="buytform__subgroup_right">
-                    <button class="buytform__buttoncount buytform__buttoncount_m"  type="button" onclick="this.nextElementSibling.stepDown()"></button>
+                    <button class="buytform__buttoncount buytform__buttoncount_m"  type="button" onclick="this.nextElementSibling.stepDown();"></button>
                     <input class="buytform__input buytform__input_count" type="number" min="0" max="20" value="2" name="senior">
-                    <button class="buytform__buttoncount buytform__buttoncount_p" type="button" onclick="this.previousElementSibling.stepUp()"></button>
+                    <button class="buytform__buttoncount buytform__buttoncount_p" type="button" onclick="this.previousElementSibling.stepUp();"></button>
                   </div>
                 </div>
               </div>
@@ -562,5 +562,6 @@
   <script src="./assets/splide/splide.min.js"></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
   <script type="module" src="./assets/js/script.js"></script>
+  <script src="./assets/js/forms.js"></script>
 </body>
 </html>
