@@ -40,7 +40,7 @@ function updateSmallForm(){
   formbig.querySelector('#buytform__sum_tickes_senior').innerHTML = ticket_type_value * tickets_senior65 * tickets_senior65_rate;
   formbig.querySelector('#form2_total_sum').innerHTML = all_sum;
 
-  formbig.querySelector('.form2_type_tickets_select').innerHTML = 'text';
+  // formbig.querySelector('#form2_type_tickets_select').innerHTML = 'text';
 
   // buytform__sum_tickes_basic
   // buytform__sum_tickes_senior
