@@ -345,6 +345,11 @@ export function videoplayer() {
 
     video.setAttribute('src', 'https://kusakin.pro/video/video'+img_index+'.mp4');
     video.setAttribute('poster', './assets/img/video/poster'+img_index+'.jpg');
+    setTimeout( () => {
+      timeUpdateLine('0');
+      rangeTime.value = 0;
+    }, 1);
+
   }
 
   splide__playlist.on( 'mounted move', function () {
