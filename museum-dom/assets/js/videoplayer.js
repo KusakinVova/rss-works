@@ -1,7 +1,5 @@
 export function videoplayer() {
 
-  let volumeVal = 0;
-
   function decimalAdjust(type, value, exp) {
     // Если степень не определена, либо равна нулю...
     if (typeof exp === 'undefined' || +exp === 0) {
@@ -25,6 +23,7 @@ export function videoplayer() {
   };
 
   // ============================================
+  // определение положение елемента в документе.
   function offset(el){
     const rect = el.getBoundingClientRect(),
       scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
@@ -33,21 +32,17 @@ export function videoplayer() {
   }
   // ============================================
   // Elements
+  let volumeVal = 0; // буфер для значения звука
+
   const player = document.querySelector('.video__player');
   const video = player.querySelector('.video');
-  const blockInfoText = player.querySelector('.player_infotext');
+  const videoBlock = player.querySelector('.player__videoblock');
+  const blockInfoText = player.querySelector('.player__infotext');
   const blockInfo = player.querySelector('.player__info');
 
   const buttonPlayBig = player.querySelector('.player__button_playvideo');
   const buttonPlaySm = player.querySelector('.player__button_play');
-  // const buttonPauseBig = player.querySelector('.player__button_pausebig');
-  // const buttonPauseSm = player.querySelector('.player__button_pause');
-
   const buttonVolume = player.querySelector('.player__button_volume');
-  // const buttonMuted = player.querySelector('.player__button_muted');
-
-  // const buttonRateUp = player.querySelector('.player__button_rateup');
-  // const buttonRateDown = player.querySelector('.player__button_ratedown');
 
   const rangeVolume = document.querySelector('.player__line_volume');
   volumeVal = rangeVolume.value;
@@ -65,11 +60,8 @@ export function videoplayer() {
     if (video.paused || video.ended) {
       buttonPlayBig.classList.add('toggle');
       buttonPlaySm.classList.add('toggle');
-      // buttonPauseSm.classList.remove('player__hidden');
       video.play();
     } else {
-      // buttonPauseBig.classList.add('player__hidden');
-      // buttonPauseSm.classList.add('player__hidden');
       buttonPlayBig.classList.remove('toggle');
       buttonPlaySm.classList.remove('toggle');
       video.pause();
@@ -79,32 +71,41 @@ export function videoplayer() {
     if (video.muted) {
       rangeVolume.value = volumeVal;
       volumeUpdate(rangeVolume, volumeVal);
+      updateTextInfo('Mute Off!');
       video.muted = false;
     } else {
       rangeVolume.value = 0;
       volumeUpdate(rangeVolume, 0);
+      updateTextInfo('Mute ON!', 'show');
       video.muted = true;
     }
   }
 
   function toggleRateUp(){
     video.playbackRate = Math.round10(video.playbackRate + 0.1, -1);
-    blockInfoText.textContent = 'Play rateup > ' + video.playbackRate;
-    blockInfo.classList.remove('player__hidden');
-    setTimeout( () => {
-      blockInfo.classList.add('player__hidden');
-    }, 1000);
+    updateTextInfo('Play rateup > ' + video.playbackRate);
   }
 
   function toggleRateDown(){
     video.playbackRate = Math.round10(video.playbackRate - 0.1, -1);
-    blockInfoText.textContent = 'Play ratedown < ' + video.playbackRate;
-    blockInfo.classList.remove('player__hidden');
-    setTimeout( () => {
-      blockInfo.classList.add('player__hidden');
-    }, 1000);
+    updateTextInfo('Play ratedown < ' + video.playbackRate);
   }
 
+  function updateTextInfo(text, animate = true){
+
+    blockInfoText.textContent = text;
+
+    if(animate === true) {
+      blockInfo.classList.add('active');
+      setTimeout( () => {
+        blockInfo.classList.remove('active');
+      }, 2000);
+    }
+
+    if(animate === 'show') blockInfo.classList.add('active');
+    if(animate === 'hide') blockInfo.classList.remove('active');
+
+  }
   // function nextVideo(){
 
   //   let videoPositionNew = +videoPosition + 1;
@@ -167,41 +168,55 @@ export function videoplayer() {
 
   function timeProgress(){
     const percent = ( video.currentTime / video.duration ) * 100;
-    rangeTime.style.background = `linear-gradient(to right, #710707 0%, #710707 ${percent}%, #c4c4c4 ${percent}%, #c4c4c4 100%)`;
     rangeTime.value = percent;
+    timeUpdateLine(percent);
+    if(percent === 100){
+      buttonPlayBig.classList.remove('toggle');
+      buttonPlaySm.classList.remove('toggle');
+      timeUpdateLine('0');
+      video.pause();
+      rangeTime.value = 0;
+    }
+
   }
 
   function timeRangeUpdate(){
-    const time = ( video.duration * this.value ) / 100;
+    let timePoint = +this.value;
+    rangeTime.value = timePoint;
+    const time = ( video.duration * timePoint ) / 100;
     video.currentTime = time;
-    rangeTime.style.background = `linear-gradient(to right, #710707 0%, #710707 ${this.value}%, #c4c4c4 ${this.value}%, #c4c4c4 100%)`;
-    rangeTime.value = this.value;
-    // console.log(this.value);
+    timeUpdateLine(timePoint);
+  }
+
+  function timeUpdateLine(value){
+    rangeTime.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #c4c4c4 ${value}%, #c4c4c4 100%)`;
   }
 
   function videoFullScreen(){
-    // if (document.fullscreenElement) {
-    //   document.exitFullscreen();
-    // } else if (document.webkitFullscreenElement) {
-    //   // Need this to support Safari
-    //   document.webkitExitFullscreen();
-    // } else if (video.webkitRequestFullscreen) {
-    //   // Need this to support Safari
-    //   video.webkitRequestFullscreen();
-    // } else {
-    //   video.requestFullscreen();
-    // }
     if (document.fullscreenElement) {
       document.exitFullscreen().then(() => {
+        videoBlock.classList.remove('full');
+        video.classList.remove('full');
         panelControl.classList.remove('player__controls_fullscreen');
         buttonFullScreen.classList.remove('toggle');
       });
     } else {
       player.requestFullscreen().then(() => {
+        videoBlock.classList.add('full');
+        video.classList.add('full');
         panelControl.classList.add('player__controls_fullscreen');
         buttonFullScreen.classList.add('toggle');
       });
     }
+  }
+
+  function videoFullScreen2(){
+    // document.exitFullscreen().then(() => {
+      videoBlock.classList.remove('full');
+      video.classList.remove('full');
+      panelControl.classList.remove('player__controls_fullscreen');
+      buttonFullScreen.classList.remove('toggle');
+    // });
   }
 
   // ============================================
@@ -236,7 +251,7 @@ export function videoplayer() {
   // Hook event listners keyboard
 
   document.body.onkeyup = function(e){
-    console.log(e.keyCode);
+    // console.log(e.keyCode);
     if(e.keyCode === 32 || e.keyCode === 75){
       // пробел - пауза или проигрывать
       // k - Приостановить или продолжить воспроизведение
@@ -286,10 +301,56 @@ export function videoplayer() {
 
     if(e.keyCode === 27){
       // esc - Включить или выключить полноэкранный режим
-      // videoFullScreen();
+      // return false;/
+      videoFullScreen2();
     }
 
   }
+  // ============================================
+  // splider playlist
+  const splide__playlist = new Splide( '.splide__playlist', {
+    type   : 'loop',
+    perPage: 3,
+    perMove: 1,
+    drag : false,
+    arrows : false,
+    pagination : false,
+    gap : '42px',
+    cover : true,
+  });
+  splide__playlist.mount();
+
+  const slider_left_playlist = document.querySelector('.control__arrow_left');
+  slider_left_playlist.addEventListener('click', function (e) {
+    splide__playlist.go( '<' );
+  });
+
+  const slider_right_playlist = document.querySelector('.control__arrow_right');
+  slider_right_playlist.addEventListener('click', function (e) {
+    splide__playlist.go( '>' );
+  });
+
+  const slider_control__dots = document.querySelectorAll('.control__dot');
+
+  Array.prototype.forEach.call(slider_control__dots, function (slider_control__dots, index) {
+    slider_control__dots.addEventListener('click', function () {
+      splide__playlist.go(index);
+    });
+  });
+
+  function updateinfoPlaylist(){
+    const img_index = splide__playlist.index;
+    [].forEach.call(slider_control__dots, function(el) {el.classList.remove('control__dot_active')});
+    slider_control__dots[img_index].classList.add('control__dot_active');
+
+    video.setAttribute('src', 'https://kusakin.pro/video/video'+img_index+'.mp4');
+    video.setAttribute('poster', './assets/img/video/poster'+img_index+'.jpg');
+  }
+
+  splide__playlist.on( 'mounted move', function () {
+    updateinfoPlaylist();
+  });
+
   // ============================================
   // itemsVideo.addEventListener( "click" , () => alert('Спасибо!'));
   // let temp_item;
@@ -328,35 +389,6 @@ export function videoplayer() {
   //   }
   // }
   // ============================================
-  /*
-  Fullscreen API:
-  https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
-  */
-  function enterFS(element) {
-    if (element.requestFullscreen) {
-      element.requestFullscreen();
-    } else if (element.msRequestFullscreen) {
-      element.msRequestFullscreen();
-    } else if (element.mozRequestFullScreen) {
-      element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullscreen) {
-      element.webkitRequestFullscreen();
-    }
-  }
-
-  function exitFS() {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    }
-  }
-  // ============================================
-  // toggleMuted();
 
 
 }

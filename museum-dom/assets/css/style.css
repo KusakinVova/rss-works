@@ -1232,30 +1232,36 @@ a {
   }
 }
 
-.player__video {
+.player__videoblock {
   position: relative;
   height: 172px;
 }
 @media screen and (min-width: 768px) {
-  .player__video {
+  .player__videoblock {
     height: 330px;
   }
 }
 @media screen and (min-width: 1024px) {
-  .player__video {
+  .player__videoblock {
     height: 444px;
   }
 }
 @media screen and (min-width: 1500px) {
-  .player__video {
+  .player__videoblock {
     height: 650px;
   }
 }
-.player__img {
+.player__videoblock.full {
+  height: calc(100% - 60px);
+}
+.player__video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
+}
+.player__video.full {
+  object-fit: contain;
 }
 .player__controls {
   display: flex;
@@ -1292,6 +1298,25 @@ a {
   position: fixed;
   width: 100%;
   bottom: 0;
+}
+.player__info {
+  position: absolute;
+  width: 600px;
+  height: 100px;
+  left: calc(50% - 300px);
+  top: calc(50% + 100px);
+  color: #ffffff;
+  text-align: center;
+  font-size: 48px;
+  opacity: 0;
+  justify-content: center;
+  align-content: center;
+}
+.player__info.active {
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 1;
 }
 .player__button {
   border: none;
@@ -1408,17 +1433,12 @@ a {
   cursor: pointer;
 }
 .player__line_time {
-  background: linear-gradient(to right, #710707 0%, #710707 53%, #c4c4c4 53%, #c4c4c4 100%);
-}
-.player__line_volume {
-  background: linear-gradient(to right, #710707 0%, #710707 43%, #c4c4c4 43%, #c4c4c4 100%);
-}
-.player__line_time {
   position: absolute;
   width: 100%;
   max-width: none;
   top: 0;
   height: 4px;
+  background: linear-gradient(to right, #710707 0%, #710707 0%, #c4c4c4 0%, #c4c4c4 100%);
 }
 @media screen and (min-width: 768px) {
   .player__line_time {
@@ -1445,6 +1465,7 @@ a {
 .player__line_volume {
   height: 5px;
   max-width: 200px;
+  background: linear-gradient(to right, #710707 0%, #710707 43%, #c4c4c4 43%, #c4c4c4 100%);
 }
 @media screen and (min-width: 768px) {
   .player__line_volume {
@@ -1568,6 +1589,23 @@ a {
     height: 254px;
     width: 452px;
   }
+}
+.playlist__item.is-active {
+  position: relative;
+}
+.playlist__item.is-active::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 5px;
+  right: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #710707;
+  background-image: url("../svg/player-play.svg");
+  background-position: 17px center;
+  background-repeat: no-repeat;
 }
 .playlist__control {
   display: flex;

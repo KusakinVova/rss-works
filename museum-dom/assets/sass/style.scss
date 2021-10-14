@@ -1211,7 +1211,7 @@ a {
 }
 
 .player {
-  &__video {
+  &__videoblock {
     position: relative;
     height: 172px;
 
@@ -1226,13 +1226,21 @@ a {
     @media screen and (min-width: $media_queries_desktop2) {
       height: 650px;
     }
+
+    &.full {
+      height: calc(100% - 60px);
+    }
   }
 
-  &__img {
+  &__video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     cursor: pointer;
+
+    &.full {
+      object-fit: contain;
+    }
   }
 
   &__controls {
@@ -1267,6 +1275,25 @@ a {
       position: fixed;
       width: 100%;
       bottom: 0;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    width: 600px;
+    height: 100px;
+    left: calc(50% - 300px);
+    top: calc(50% + 100px);
+    color: #ffffff;
+    text-align: center;
+    font-size: 48px;
+    opacity: 0;
+    justify-content: center;
+    align-content: center;
+
+    &.active {
+      @include transition;
+      opacity: 1;
     }
   }
 
@@ -1391,18 +1418,12 @@ a {
     }
 
     &_time {
-      background: linear-gradient(to right, $dark_red 0%, $dark_red 53%, $color_grey 53%, $color_grey 100%);
-    }
-    &_volume {
-      background: linear-gradient(to right, $dark_red 0%, $dark_red 43%, $color_grey 43%, $color_grey 100%);
-    }
-
-    &_time {
       position: absolute;
       width: 100%;
       max-width: none;
       top: 0;
       height: 4px;
+      background: linear-gradient(to right, $dark_red 0%, $dark_red 0%, $color_grey 0%, $color_grey 100%);
 
       @media screen and (min-width: $media_queries_tablet) {
         position: absolute;
@@ -1427,6 +1448,7 @@ a {
     &_volume {
       height: 5px;
       max-width: 200px;
+      background: linear-gradient(to right, $dark_red 0%, $dark_red 43%, $color_grey 43%, $color_grey 100%);
 
       @media screen and (min-width: $media_queries_tablet) {
         height: 5px;
@@ -1533,7 +1555,25 @@ a {
         height: 254px;
         width: 452px;
       }
+    }
 
+    &.is-active {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 5px;
+        right: 5px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        background-color: $dark_red;
+        background-image: url("../svg/player-play.svg");
+        background-position: 17px center;
+        background-repeat: no-repeat;
+      }
     }
   }
 

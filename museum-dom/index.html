@@ -184,66 +184,75 @@
           <p class="video__text">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
         </div>
         <div class="video__player">
-          <div class="player__video">
-            <video class=" player__img video__block video" src="https://kusakin.pro/video/video0.mp4" poster="./assets/img/video/poster0.jpg" data-position="1"></video>
-            <!-- <img class="player__img" src="./assets/img/video/poster0.jpg" alt="Video journey"> -->
+          <div class="player__videoblock">
+            <video class="player__video video__block video" src="https://kusakin.pro/video/video0.mp4" poster="./assets/img/video/poster0.jpg" data-position="1"></video>
             <button class="player__button player__button_playvideo player__button_hover player__button_click"></button>
-            <div class="player__info player__hidden"><p class="player_infotext"></p></div>
+            <div class="player__info"><p class="player__infotext"></p></div>
           </div>
           <div class="player__controls">
             <button class="player__button player__button_play player__button_hover player__button_click"></button>
-            <input class="player__line player__line_time" type="range" name="time"  min="0" max="100" step="0.01" value="53">
+            <input class="player__line player__line_time" type="range" name="time"  min="0" max="100" step="0.01" value="0">
             <button class="player__button player__button_volume half player__button_hover player__button_click"></button>
             <input class="player__line player__line_volume" type="range" name="volume" min="0" max="100" step="1"  value="43">
             <button class="player__button player__button_fullscreen player__button_hover player__button_click" ></button>
           </div>
         </div>
 
-        <!-- <div class="player">
-          <div class="player__video">
-            <video class="video__block video" src="https://kusakin.pro/video/video0.mp4" data-position="1"></video>
-            <button class="player__button player__button_playbig player__button_hover player__button_click"></button>
-            <button class="player__button player__button_pausebig player__button_hover player__button_click player__hidden"></button>
-            <div class="player_info player__hidden"><p class="player_infotext"></p></div>
-          </div>
-          <div class="player__panelcontrol">
-            <button class="player__button player__button_ratedown player__button_hover player__button_click"></button>
-            <button class="player__button player__button_play player__button_hover player__button_click"></button>
-            <button class="player__button player__button_pause player__button_hover player__button_click player__hidden"></button>
-            <button class="player__button player__button_rateup player__button_hover player__button_click"></button>
-            <input class="player__range player__range_time" type="range" name="time" min="0" max="100" step="0.01" value="0">
-            <button class="player__button player__button_volume player__button_hover player__button_click"></button>
-            <button class="player__button player__button_muted player__button_hover player__button_click player__hidden"></button>
-            <input class="player__range player__range_volume" type="range" name="volume" min="0" max="100" step="1" value="40">
-            <button class="player__button player__button_fullscreen player__button_hover player__button_click" ></button>
-          </div>
-        </div> -->
-
         <div class="video__playlist">
-          <div class="playlist">
+
+          <div class="playlist splide__playlist">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide playlist__item">
+                  <!-- <img src="./assets/img/video/poster0.jpg" alt=""> -->
+                  <iframe src="https://www.youtube.com/embed/zp1BXPX8jcU" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </li>
+                <li class="splide__slide playlist__item">
+                  <!-- <img src="./assets/img/video/poster1.jpg" alt=""> -->
+                <iframe src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </li>
+                <li class="splide__slide playlist__item">
+                  <!-- <img src="./assets/img/video/poster2.jpg" alt=""> -->
+                <iframe src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </li>
+                <li class="splide__slide playlist__item">
+                  <!-- <img src="./assets/img/video/poster3.jpg" alt=""> -->
+                <iframe src="https://www.youtube.com/embed/aWmJ5DgyWPI" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </li>
+                <li class="splide__slide playlist__item">
+                  <!-- <img src="./assets/img/video/poster4.jpg" alt=""> -->
+                <iframe src="https://www.youtube.com/embed/2OR0OCr6uRE" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+          <!-- <div class="playlist">
             <div class="playlist__block">
               <div class="playlist__item">
                 <img src="./assets/img/video/poster0.jpg" alt="">
-                <!-- <iframe src="https://www.youtube.com/embed/zp1BXPX8jcU" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                <iframe src="https://www.youtube.com/embed/zp1BXPX8jcU" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
               <div class="playlist__item">
                 <img src="./assets/img/video/poster1.jpg" alt="">
-                <!-- <iframe src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                <iframe src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
               <div class="playlist__item">
                 <img src="./assets/img/video/poster2.jpg" alt="">
-                <!-- <iframe src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                <iframe src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
               <div class="playlist__item">
                 <img src="./assets/img/video/poster3.jpg" alt="">
-                <!-- <iframe src="https://www.youtube.com/embed/aWmJ5DgyWPI" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                <iframe src="https://www.youtube.com/embed/aWmJ5DgyWPI" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
               <div class="playlist__item">
                 <img src="./assets/img/video/poster4.jpg" alt="">
-                <!-- <iframe src="https://www.youtube.com/embed/2OR0OCr6uRE" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                <iframe src="https://www.youtube.com/embed/2OR0OCr6uRE" title="YouTube video player" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
-          </div>
+          </div> -->
+
           <div class="playlist__control">
             <button class="control__arrow control__arrow_left"></button>
             <ul class="control__dots">
