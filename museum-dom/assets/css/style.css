@@ -1937,6 +1937,7 @@ a {
 @media screen and (min-width: 1500px) {
   .form__rightblock {
     align-items: flex-end;
+    width: 200px;
   }
 }
 .form__title {
@@ -2587,6 +2588,9 @@ a {
 }
 .buytform__selectstyle.active::before {
   transform: rotate(180deg);
+}
+.buytform__selectstyle.timeselect .buytform__selectstyle_val {
+  background-image: url("../svg/form/time.svg");
 }
 .buytform__selectstyle_value, .buytform__selectstyle_val {
   width: 100%;

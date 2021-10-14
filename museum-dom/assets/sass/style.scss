@@ -1904,6 +1904,7 @@ a {
 
     @media screen and (min-width: $media_queries_desktop2) {
       align-items: flex-end;
+      width: 200px;
     }
   }
 
@@ -2635,6 +2636,10 @@ a {
     &.active::before {
       // @include transition;
       transform: rotate(180deg);
+    }
+
+    &.timeselect &_val {
+      background-image: url("../svg/form/time.svg");
     }
 
     &_value,
