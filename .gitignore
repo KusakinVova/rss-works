@@ -102,4 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+#system files
 .DS_Store
+dontfoget.txt
