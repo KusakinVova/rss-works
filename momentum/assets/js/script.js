@@ -2,6 +2,7 @@ import { Quote } from './quotes.js';
 import { TimeDate } from './timedate.js';
 import { Background } from './background.js';
 import { addLineForClock, createClock} from './clock.js';
+import { Weather } from './weather.js';
 import { playList } from './playList.js';
 
 const lang = 'ru';
@@ -62,3 +63,13 @@ createClock('.clock');
 //--------------------------------
 // console.log(playList);
 //--------------------------------
+
+
+const weather = new Weather('.weather');
+function updateWeath(){
+  weather.updateWeather(lang);
+}
+updateWeath();
+
+const cityWeather = document.querySelector(".city");
+cityWeather.addEventListener("change", updateWeath );

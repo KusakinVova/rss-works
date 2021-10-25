@@ -26,7 +26,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  height: 30vh;
+  height: 20vh;
   min-height: 220px;
   padding: 20px;
 }
@@ -69,6 +69,7 @@ body {
   color: #c5b358;
 }
 
+.settings-button,
 .player-icon,
 .slider-icon,
 .change-quote {
@@ -171,7 +172,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 40vh;
+  height: 50vh;
   min-height: 260px;
   padding: 20px;
 }
@@ -246,7 +247,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  height: 30vh;
+  height: 25vh;
   min-height: 160px;
   padding: 20px;
 }
@@ -283,4 +284,42 @@ body {
     font-size: 32px;
     padding: 5px;
   }
+}
+/* --------------------------------- */
+.footer__list {
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.footer__item {
+  width: 100%;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 991px) {
+  .footer__list {
+    text-align: left;
+    flex-wrap: nowrap;
+  }
+
+  .footer__item {
+    width: auto;
+  }
+}
+/* --------------------------------- */
+.settings-button {
+  position: absolute;
+  left: 20px;
+  background-image: url("../svg/settings.svg");
+}
+
+.settings-button:hover,
+.change-quote:hover {
+  opacity: 1;
+  transform: rotate(360deg);
 }
