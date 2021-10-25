@@ -5,7 +5,7 @@ import { addLineForClock, createClock} from './clock.js';
 import { Weather } from './weather.js';
 import { playList } from './playList.js';
 
-const lang = 'ru';
+let lang = 'ru';
 //--------------------------------
 const quote = new Quote;
 
@@ -63,13 +63,34 @@ createClock('.clock');
 //--------------------------------
 // console.log(playList);
 //--------------------------------
-
-
 const weather = new Weather('.weather');
 function updateWeath(){
   weather.updateWeather(lang);
 }
 updateWeath();
 
-const cityWeather = document.querySelector(".city");
-cityWeather.addEventListener("change", updateWeath );
+const cityWeather = document.querySelector('.city');
+cityWeather.addEventListener('change', updateWeath );
+
+//--------------------------------
+const popBlock = document.querySelector('.pop');
+const buttonSettings = document.querySelector('.settings-button');
+buttonSettings.addEventListener('click', function () {
+  popBlock.classList.toggle('show');
+});
+
+
+if(document.querySelector('input[name="lang"]')){
+  document.querySelectorAll('input[name="lang"]').forEach((elem) => {
+      elem.addEventListener("click", function(event){
+          lang = event.target.value;
+          updateQuote();
+          updateGreetings();
+          updateDate();
+          updateWeath();
+      });
+  });
+}
+
+
+//--------------------------------

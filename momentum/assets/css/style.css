@@ -323,3 +323,24 @@ body {
   opacity: 1;
   transform: rotate(360deg);
 }
+
+/* --------------------------------- */
+.pop {
+  left: -100vw;
+  top: calc(50% - 300px);
+  position: absolute;
+  height: 600px;
+  width: 600px;
+  padding: 30px;
+  background-color: #000000dd;
+  z-index: 100;
+  transition: 1s;
+}
+
+.pop.show {
+  left: calc(50% - 300px);
+}
+
+.pop ul {
+  list-style: none;
+}
