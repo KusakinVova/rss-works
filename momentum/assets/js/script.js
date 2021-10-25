@@ -1,6 +1,7 @@
 import { Quote } from './quotes.js';
 import { TimeDate } from './timedate.js';
 import { Background } from './background.js';
+import { addLineForClock, createClock} from './clock.js';
 import { playList } from './playList.js';
 
 const lang = 'ru';
@@ -56,11 +57,8 @@ function updateDate(){
 }
 updateDate();
 //--------------------------------
+addLineForClock('.clock');
+createClock('.clock');
+//--------------------------------
 // console.log(playList);
 //--------------------------------
-
-
-
-
-
-
