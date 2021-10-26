@@ -82,15 +82,24 @@
     <button class="settings-button"></button>
   </footer>
   <div class="pop">
-    <div class="pop__title">Настройки</div>
-    <ul class="settings__list">
-      <li class="settings__item">
-        <span>Lang</span>
-        <input type="radio" name="lang" value="en"> EN
-        <input type="radio" name="lang" value="ru"> RU
-      </li>
-      <li class="settings__item"></li>
-    </ul>
+    <p class="pop__title">Настройки</p>
+    <div class="settings__list">
+      <p class="settings__item">
+        <span class="title_lang">Lang</span>
+        <input type="radio" name="lang" value="en" checked><span class="lang_val_en">EN</span>
+        <input type="radio" name="lang" value="ru"><span class="lang_val_кг">RU</span>
+      </p>
+      <p class="settings__item">
+        <p class="title_show_hide">Показать / Скрыть</p>
+        <p><span>Часы</span><input type="checkbox" name="clock"></p>
+        <p><span>Время</span><input type="checkbox" name="time"></p>
+        <p><span>Дата</span><input type="checkbox" name="date"></p>
+        <p><span>Погода</span><input type="checkbox" name="weather"></p>
+        <p><span>Цитата</span><input type="checkbox" name="quote"></p>
+        <p><span>Приветствие</span><input type="checkbox" name="greeting"></p>
+        <p><span>Плейр</span><input type="checkbox" name="player"></p>
+      </p>
+    </div>
   </div>
   <script type="module" src="./assets/js/script.js"></script>
 </body>
