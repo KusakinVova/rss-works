@@ -3,9 +3,11 @@ import { TimeDate } from './timedate.js';
 import { Background } from './background.js';
 import { addLineForClock, createClock} from './clock.js';
 import { Weather } from './weather.js';
-import { playList } from './playList.js';
+import { audioPlayer } from './audioplayer.js';
 
 let lang = 'ru';
+//--------------------------------
+audioPlayer('.player');
 //--------------------------------
 const quote = new Quote;
 
@@ -61,8 +63,6 @@ updateDate();
 addLineForClock('.clock');
 createClock('.clock');
 //--------------------------------
-// console.log(playList);
-//--------------------------------
 
 const userCity = document.querySelector('.user__city');
 let userCityValue = localStorage.getItem('user__city') || 'Minsk';
@@ -107,35 +107,6 @@ if(document.querySelector('input[name="lang"]')){
   });
 }
 //--------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

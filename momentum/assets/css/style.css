@@ -41,16 +41,38 @@ body {
 
 .play-list {
   text-align: left;
+  max-height: 115px;
+  overflow-y: scroll;
+  padding-right: 10px;
+}
+
+.play-list::-webkit-scrollbar {
+  width: .3em;
+}
+
+.play-list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.play-list::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
 
 .play-item {
   position: relative;
   padding: 5px;
   padding-left: 20px;
+  padding-right: 50px;
   list-style: none;
   opacity: .8;
   cursor: pointer;
   transition: .3s;
+}
+
+.play-item .end {
+  position: absolute;
+  right: 0;
 }
 
 .play-item:hover {
