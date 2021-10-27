@@ -63,16 +63,31 @@ createClock('.clock');
 //--------------------------------
 // console.log(playList);
 //--------------------------------
+
+const userCity = document.querySelector('.user__city');
+let userCityValue = localStorage.getItem('user__city') || 'Minsk';
+userCity.value = userCityValue;
 const weather = new Weather('.weather');
 function updateWeath(){
   weather.updateWeather(lang);
 }
 updateWeath();
 
-const cityWeather = document.querySelector('.city');
-cityWeather.addEventListener('change', updateWeath );
+userCity.addEventListener('change', function () {
+  userCityValue = userCity.value;
+  localStorage.setItem('user__city', userCityValue);
+  updateWeath();
+});
 
 //--------------------------------
+const userName = document.querySelector('.user__name');
+userName.value = localStorage.getItem('user__name') || '';
+userName.addEventListener('input', function () {
+    localStorage.setItem('user__name', userName.value);
+});
+
+//--------------------------------
+// setings
 const popBlock = document.querySelector('.pop');
 const buttonSettings = document.querySelector('.settings-button');
 buttonSettings.addEventListener('click', function () {
@@ -91,6 +106,41 @@ if(document.querySelector('input[name="lang"]')){
       });
   });
 }
+//--------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //--------------------------------

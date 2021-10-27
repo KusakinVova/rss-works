@@ -32,7 +32,7 @@ export class Weather {
     const weatherErrorBlock = parentBlock.querySelector('.weather-error');
 
     let city = weatherCityInput.value;
-    if(city === '') city = 'London';
+    if(city === '') city = 'Minsk';
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${lang}&appid=bfe22651f723c15dc83c2951d6345744&units=metric`;
     const res = await fetch(url);
