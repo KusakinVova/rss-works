@@ -55,8 +55,8 @@ body {
 }
 
 .play-list::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+  background-color: #a9a9a9;
+  outline: 1px solid #708090;
 }
 
 .play-item {
@@ -87,7 +87,7 @@ body {
   font-weight: 900;
 }
 
-.item-active::before {
+.item-active{
   color: #c5b358;
 }
 
