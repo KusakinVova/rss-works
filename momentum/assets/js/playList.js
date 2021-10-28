@@ -7,7 +7,7 @@ export const playList = [
   {
     title: 'Fort Minor - Welcome',
     src: 'https://minty.club/artist/fort-minor/welcome-clean/fort-minor-welcome-clean.mp3',
-    duration: '03:33'
+    duration: '03:32'
   },
   {
     title: 'Nf - The Search',
@@ -32,12 +32,12 @@ export const playList = [
   {
     title: 'Linkin Park - Numb',
     src: 'https://minty.club/artist/linkin-park/numb/linkin-park-numb.mp3',
-    duration: '03:08'
+    duration: '03:07'
   },
   {
     title: 'Pendulum - The Other Side',
     src: 'https://minty.club/artist/pendulum/the-other-side/pendulum-the-other-side.mp3',
-    duration: '05:16'
+    duration: '05:15'
   },
   {
     title: 'Pendulum - Witchcraft',
@@ -47,21 +47,21 @@ export const playList = [
   {
     title: 'Aqua Caelestis',
     src: './assets/sounds/Aqua Caelestis.mp3',
-    duration: '00:58'
+    duration: '00:39'
   },
   {
     title: 'River Flows In You',
     src: './assets/sounds/River Flows In You.mp3',
-    duration: '03:50'
+    duration: '01:37'
   },
   {
     title: 'Summer Wind',
     src: './assets/sounds/Summer Wind.mp3',
-    duration: '05:05'
+    duration: '01:50'
   },
   {
     title: 'Ennio Morricone',
     src: './assets/sounds/Ennio Morricone.mp3',
-    duration: '05:03'
+    duration: '01:37'
   }
 ];

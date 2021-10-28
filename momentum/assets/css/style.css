@@ -35,7 +35,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 120px;
+  /* width: 320px; */
   margin-bottom: 28px;
 }
 
@@ -43,7 +43,8 @@ body {
   text-align: left;
   max-height: 115px;
   overflow-y: scroll;
-  padding-right: 10px;
+  padding: 5px 10px 5px;
+  background-color: #000000aa;
 }
 
 .play-list::-webkit-scrollbar {
@@ -87,8 +88,8 @@ body {
   font-weight: 900;
 }
 
-.item-active{
-  color: #c5b358;
+.item-active {
+  color: #009914;
 }
 
 .settings-button,
@@ -139,6 +140,57 @@ body {
 
 .play-next {
   background-image: url("../svg/play-next.svg");
+}
+
+.play-volume {
+  background-image: url("../svg/player-volume.svg");
+}
+
+.play-volume.toggle {
+  background-image: url("../svg/player-mute.svg");
+}
+
+.play-volume.half {
+  background-image: url("../svg/player-volume-half.svg");
+}
+
+.block-time {
+  display: flex;
+  padding-right: 14px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.play-time-line {
+  width: 70%;
+}
+
+.play-volume-line,
+.play-time-line {
+  height: 10px;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #009914 0%, #009914 0%, #ffffff 0%, #ffffff 100%);
+}
+
+.play-volume-line {
+  width: 50%;
+  background: linear-gradient(to right, #009914 0%, #009914 50%, #ffffff 50%, #ffffff 100%);
+}
+
+.play-volume-line::-webkit-slider-thumb,
+.play-time-line::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.time-info {
+  width: 30%;
+  text-align: right;
 }
 
 .weather {
