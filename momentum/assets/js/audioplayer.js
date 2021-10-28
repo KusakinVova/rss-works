@@ -179,8 +179,6 @@ export function audioPlayer(className) {
     audio.pause();
     audioPlayNow = false;
     buttonPlay.classList.remove("pause");
-    console.log(audio.duration)
-    console.log(audio.currentTime)
   }
   //------------------------------------------------------
   // клик по предыдущему треку

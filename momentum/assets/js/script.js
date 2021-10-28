@@ -4,8 +4,133 @@ import { Background } from './background.js';
 import { addLineForClock, createClock} from './clock.js';
 import { Weather } from './weather.js';
 import { audioPlayer } from './audioplayer.js';
+import { Translate } from './translate.js';
 
-let lang = 'ru';
+//--------------------------------
+let lang = localStorage.getItem('lang') || 'en';
+
+document.querySelector('input[name="lang"][value="'+lang+'"]').checked = true
+
+const translate = new Translate;
+translate.update(lang);
+
+if(document.querySelector('input[name="lang"]')){
+  document.querySelectorAll('input[name="lang"]').forEach((elem) => {
+      elem.addEventListener("click", function(event){
+          lang = event.target.value;
+          updateQuote();
+          updateGreetings();
+          updateDate();
+          updateWeath();
+          translate.update(lang);
+          localStorage.setItem('lang', lang);
+      });
+  });
+}
+
+//--------------------------------
+// setings
+
+
+
+const checkerClock = document.querySelector('.chcker-clock');
+checkerClock.addEventListener('change', function () {
+  document.querySelector('.clock-block').classList.toggle('hide');
+  localStorage.setItem('clock', checkerClock.checked);
+});
+if(localStorage.getItem('clock') === 'false') {
+  document.querySelector('.clock-block').classList.add('hide');
+  checkerClock.checked = false;
+}
+
+
+const checkerTime = document.querySelector('.chcker-time');
+checkerTime.addEventListener('change', function () {
+  document.querySelector('.time').classList.toggle('hide');
+  localStorage.setItem('time', checkerTime.checked);
+});
+if(localStorage.getItem('time') === 'false') {
+  document.querySelector('.time').classList.add('hide');
+  checkerTime.checked = false;
+}
+
+
+const checkerDate = document.querySelector('.chcker-date');
+checkerDate.addEventListener('change', function () {
+  document.querySelector('.date').classList.toggle('hide');
+  localStorage.setItem('date', checkerDate.checked);
+});
+if(localStorage.getItem('date') === 'false'){
+  document.querySelector('.date').classList.add('hide');
+  checkerDate.checked = false;
+}
+
+const checkerWeather = document.querySelector('.chcker-weather');
+checkerWeather.addEventListener('change', function () {
+  document.querySelector('.weather-block').classList.toggle('hide');
+  localStorage.setItem('weather', checkerWeather.checked);
+});
+if(localStorage.getItem('weather') === 'false'){
+  document.querySelector('.weather-block').classList.add('hide');
+  checkerWeather.checked = false;
+}
+
+
+const checkerQuote = document.querySelector('.chcker-quote');
+checkerQuote.addEventListener('change', function () {
+  document.querySelector('.quote__block').classList.toggle('hide');
+  localStorage.setItem('quote', checkerQuote.checked);
+});
+if(localStorage.getItem('quote') === 'false'){
+  document.querySelector('.quote__block').classList.add('hide');
+  checkerQuote.checked = false;
+}
+
+
+const checkerGreeting = document.querySelector('.chcker-greeting');
+checkerGreeting.addEventListener('change', function () {
+  document.querySelector('.greeting-container').classList.toggle('hide');
+  localStorage.setItem('greeting', checkerGreeting.checked);
+});
+if(localStorage.getItem('greeting') === 'false'){
+  document.querySelector('.greeting-container').classList.add('hide');
+  checkerGreeting.checked = false;
+}
+
+
+const checkerPlayer = document.querySelector('.chcker-player');
+checkerPlayer.addEventListener('change', function () {
+  document.querySelector('.player-block').classList.toggle('hide');
+  localStorage.setItem('player', checkerPlayer.checked);
+});
+if(localStorage.getItem('player') === 'false'){
+  document.querySelector('.player-block').classList.add('hide');
+  checkerPlayer.checked = false;
+}
+
+
+const checkerFooter = document.querySelector('.chcker-footer');
+checkerFooter.addEventListener('change', function () {
+  document.querySelector('.footer__list').classList.toggle('hide');
+  localStorage.setItem('footer', checkerFooter.checked);
+});
+if(localStorage.getItem('footer') === 'false'){
+  document.querySelector('.footer__list').classList.add('hide');
+  checkerFooter.checked = false;
+}
+
+//--------------------------------
+// pop show
+const popBlock = document.querySelector('.pop');
+const buttonCloser = document.querySelector('.pop-closer');
+const buttonSettings = document.querySelector('.settings-button');
+buttonSettings.addEventListener('click', function () {
+  popBlock.classList.toggle('show');
+});
+
+buttonCloser.addEventListener('click', function () {
+  popBlock.classList.toggle('show');
+});
 //--------------------------------
 audioPlayer('.player');
 //--------------------------------
@@ -85,27 +210,6 @@ userName.value = localStorage.getItem('user__name') || '';
 userName.addEventListener('input', function () {
     localStorage.setItem('user__name', userName.value);
 });
-
-//--------------------------------
-// setings
-const popBlock = document.querySelector('.pop');
-const buttonSettings = document.querySelector('.settings-button');
-buttonSettings.addEventListener('click', function () {
-  popBlock.classList.toggle('show');
-});
-
-
-if(document.querySelector('input[name="lang"]')){
-  document.querySelectorAll('input[name="lang"]').forEach((elem) => {
-      elem.addEventListener("click", function(event){
-          lang = event.target.value;
-          updateQuote();
-          updateGreetings();
-          updateDate();
-          updateWeath();
-      });
-  });
-}
 //--------------------------------
 
 
@@ -115,9 +219,9 @@ if(document.querySelector('input[name="lang"]')){
 
 
 //--------------------------------
-alert('Доброжелательный проверяющий! Пожалуйста посмотри в консоль.');
-console.log('%c'+ 'Привет!', 'color: #008000; font-size: 24px');
-console.log('%c'+ 'По дружески прошу проверить мою работу, после 6ти часов вечера 🙏 🙏 🙏', 'color: #008000; font-size: 18px')
-console.log('%c'+ 'Благодарю за понимание!', 'color: #008000; font-size: 18px');
-console.log('%c'+ 'Мой телеграмм для связи https://t.me/kusakinvladimir ', 'color: #008000; font-size: 18px');
+// alert('Доброжелательный проверяющий! Пожалуйста посмотри в консоль.');
+// console.log('%c'+ 'Привет!', 'color: #008000; font-size: 24px');
+// console.log('%c'+ 'По дружески прошу проверить мою работу, после 6ти часов вечера 🙏 🙏 🙏', 'color: #008000; font-size: 18px')
+// console.log('%c'+ 'Благодарю за понимание!', 'color: #008000; font-size: 18px');
+// console.log('%c'+ 'Мой телеграмм для связи https://t.me/kusakinvladimir ', 'color: #008000; font-size: 18px');
 //--------------------------------

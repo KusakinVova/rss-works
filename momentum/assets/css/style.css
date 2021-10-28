@@ -36,12 +36,18 @@ body {
   display: flex;
 }
 
+.player-block {
+  transition: 1s ease-in-out;
+}
+
 .clock-block {
   justify-content: center;
+  transition: 1s ease-in-out;
 }
 
 .weather-block {
   justify-content: end;
+  transition: 1s ease-in-out;
 }
 
 .player-controls {
@@ -115,6 +121,10 @@ body {
 .item-active {
   color: #009914;
 }
+/*
+.play-item.item-active .play {
+  background-image: url("../svg/pause.svg");
+} */
 
 .settings-button,
 .player-icon,
@@ -303,12 +313,14 @@ body {
   font-family: "Arial-MT", sans-serif;
   font-size: 100px;
   letter-spacing: -4px;
+  transition: 1s ease-in-out;
 }
 
 .date {
   min-height: 28px;
   font-size: 24px;
   margin-bottom: 20px;
+  transition: 1s ease-in-out;
 }
 
 .greeting-container {
@@ -319,6 +331,7 @@ body {
   min-height: 48px;
   width: 100vw;
   font-size: 40px;
+  transition: 1s ease-in-out;
 }
 
 .greeting {
@@ -360,6 +373,10 @@ body {
   background-image: url("../svg/reload.svg");
 }
 
+.quote__block {
+  transition: 1s ease-in-out;
+}
+
 .quote {
   min-height: 32px;
 }
@@ -397,6 +414,7 @@ body {
   text-align: center;
   width: 100%;
   max-width: 600px;
+  transition: 1s ease-in-out;
 }
 
 .footer__item {
@@ -428,22 +446,56 @@ body {
 }
 
 /* --------------------------------- */
+.hide {
+  opacity: 0;
+  transition: 0s;
+}
+
 .pop {
   left: -100vw;
-  top: calc(50% - 300px);
+  top: calc(50% - 250px);
   position: absolute;
-  height: 600px;
-  width: 600px;
+  height: 500px;
+  width: 400px;
   padding: 30px;
   background-color: #000000dd;
   z-index: 100;
   transition: 1s;
+  text-align: left;
+  font-size: 18px;
+}
+
+.pop-closer {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background-image: url("../svg/closer.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .pop.show {
-  left: calc(50% - 300px);
+  left: calc(50% - 200px);
 }
 
 .pop ul {
   list-style: none;
+}
+
+.pop p {
+  margin-bottom: 5px;
+}
+
+.pop p span {
+  margin-right: 10px;
+}
+
+.pop__title {
+  text-align: center;
+  font-size: 24px;
 }
