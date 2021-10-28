@@ -6,6 +6,9 @@ export function audioPlayer(className) {
   let trackPlay = 0;
   audio.src = playList[trackPlay].src;
   //------------------------------------------------------
+  const trackName = document.querySelector(className + ' .track-name');
+  trackName.textContent = playList[trackPlay].title;
+  //------------------------------------------------------
   function sToTime(t) {
     return padZero(parseInt((t / (60 * 60)) % 24)) + ":" +
            padZero(parseInt((t / (60)) % 60)) + ":" +
@@ -46,7 +49,7 @@ export function audioPlayer(className) {
     e = document.createElement('li');
     e.classList.add('play-item');
     e.setAttribute('track_point', i)
-    e.innerHTML = `${playList[i].title}  <span class='end'>${playList[i].duration}<span>` ;
+    e.innerHTML = `<span class='play'></span> ${playList[i].title}  <span class='end'>${playList[i].duration}</span>` ;
     playlistBlock.append(e);
   });
   //------------------------------------------------------
@@ -64,6 +67,7 @@ export function audioPlayer(className) {
         if(audioPlayNow) pauseAudio();
         else playAudio();
       }
+      trackName.textContent = playList[trackPlay].title;
       checkActiveTrack(track_click);
     })
   });
@@ -125,7 +129,7 @@ export function audioPlayer(className) {
   }
 
   function volumeUpdate(volumeVal){
-    rangeVolume.style.background = `linear-gradient(to right, #009914 0%, #009914 ${volumeVal}%, #c4c4c4 ${volumeVal}%, #c4c4c4 100%)`;
+    rangeVolume.style.background = `linear-gradient(to right, #009914 0%, #009914 ${volumeVal}%, #ffffff ${volumeVal}%, #ffffff 100%)`;
     audio.volume = volumeVal / 100;
     if (volumeVal >= 50){
       buttonVolume.classList.remove('toggle');
@@ -184,10 +188,9 @@ export function audioPlayer(className) {
     if(trackPlay === 0) trackPlay = playList.length - 1;
     else trackPlay --;
     audio.src = playList[trackPlay].src;
+    trackName.textContent = playList[trackPlay].title;
     playAudio();
     checkActiveTrack(trackPlay);
-    console.log(playList[trackPlay].src);
-
   }
   //------------------------------------------------------
   // клик по следующему треку
@@ -195,9 +198,10 @@ export function audioPlayer(className) {
     if(trackPlay === (playList.length - 1) ) trackPlay = 0;
     else trackPlay ++;
     audio.src = playList[trackPlay].src;
+    trackName.textContent = playList[trackPlay].title;
     playAudio();
     checkActiveTrack(trackPlay);
-    console.log(playList[trackPlay].src);
+    // console.log(playList[trackPlay].src);
   }
 
 

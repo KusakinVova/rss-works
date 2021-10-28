@@ -11,35 +11,62 @@
 </head>
 <body>
   <header class="header">
-    <div class="player">
-      <div class="player-controls">
-        <button class="play-prev player-icon"></button>
-        <button class="play player-icon"></button>
-        <button class="play-next player-icon"></button>
-        <button class="play-volume player-icon"></button>
-        <input type="range" name="volume" class="play-volume-line" value="50">
+
+    <div class="player-block">
+      <div class="player">
+        <div class="player-controls">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="play-next player-icon"></button>
+          <button class="play-volume player-icon"></button>
+          <input type="range" name="volume" class="play-volume-line" value="100">
+        </div>
+        <div class="track-name"></div>
+        <div class="block-time">
+          <input type="range" name="time" class="play-time-line" value="0">
+          <span class="time-info">
+            <span class="current-time">00:00</span> / <span class="all-time">00:00</span>
+          </span>
+        </div>
+
+        <ul class="play-list"></ul>
       </div>
-
-      <div class="block-time">
-        <input type="range" name="time" class="play-time-line" value="0">
-        <span class="time-info">
-          <span class="current-time">00:00</span> / <span class="all-time">00:00</span>
-        </span>
-
-      </div>
-
-      <ul class="play-list"></ul>
     </div>
-    <div class="weather">
-      <input type="text" class="city user__city" placeholder="[Enter sity]" />
-      <i class="weather-icon owf"></i>
-      <div class="weather-error"></div>
-      <div class="description-container">
-        <span class="temperature"></span>
-        <span class="weather-description"></span>
+
+    <div class="clock-block">
+      <div class="clock">
+        <div class="clock-circle"></div>
+        <div class="clock-line clock-line-hour"></div>
+        <div class="clock-line clock-line-min"></div>
+        <div class="clock-line clock-line-sec"></div>
+        <div class="clock-numbers">
+          <span class="clock-numb clock-numb1">1</span>
+          <span class="clock-numb clock-numb2">2</span>
+          <span class="clock-numb clock-numb3">3</span>
+          <span class="clock-numb clock-numb4">4</span>
+          <span class="clock-numb clock-numb5">5</span>
+          <span class="clock-numb clock-numb6">6</span>
+          <span class="clock-numb clock-numb7">7</span>
+          <span class="clock-numb clock-numb8">8</span>
+          <span class="clock-numb clock-numb9">9</span>
+          <span class="clock-numb clock-numb10">10</span>
+          <span class="clock-numb clock-numb11">11</span>
+          <span class="clock-numb clock-numb12">12</span>
+        </div>
       </div>
-      <div class="wind"></div>
-      <div class="humidity"></div>
+    </div>
+    <div class="weather-block">
+      <div class="weather">
+        <input type="text" class="city user__city" placeholder="[Enter sity]" />
+        <i class="weather-icon owf"></i>
+        <div class="weather-error"></div>
+        <div class="description-container">
+          <span class="temperature"></span>
+          <span class="weather-description"></span>
+        </div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+      </div>
     </div>
   </header>
   <main class="main">
@@ -48,26 +75,7 @@
       <button class="slide-next slider-icon"></button>
     </div>
 
-    <div class="clock">
-      <div class="clock-circle"></div>
-      <div class="clock-line clock-line-hour"></div>
-      <div class="clock-line clock-line-min"></div>
-      <div class="clock-line clock-line-sec"></div>
-      <div class="clock-numbers">
-        <span class="clock-numb clock-numb1">1</span>
-        <span class="clock-numb clock-numb2">2</span>
-        <span class="clock-numb clock-numb3">3</span>
-        <span class="clock-numb clock-numb4">4</span>
-        <span class="clock-numb clock-numb5">5</span>
-        <span class="clock-numb clock-numb6">6</span>
-        <span class="clock-numb clock-numb7">7</span>
-        <span class="clock-numb clock-numb8">8</span>
-        <span class="clock-numb clock-numb9">9</span>
-        <span class="clock-numb clock-numb10">10</span>
-        <span class="clock-numb clock-numb11">11</span>
-        <span class="clock-numb clock-numb12">12</span>
-      </div>
-    </div>
+
 
     <time class="time"></time>
     <date class="date"></date>
