@@ -1,13 +1,13 @@
 .sources {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     width: 100%;
-    height: 120px;
     overflow: auto;
     align-items: center;
     font: 300 1em 'Fira Sans', sans-serif;
 }
 
+.alphabet__item,
 .source__item {
     background: none;
     border: 2px solid #30c5ff;
@@ -20,6 +20,8 @@
     cursor: pointer;
 }
 
+.alphabet__item:hover,
+.alphabet__item:focus,
 .source__item:hover,
 .source__item:focus {
     border-color: #3fcc59;
@@ -31,4 +33,21 @@
 .source__item-name {
     font-weight: 400;
     white-space: nowrap;
+}
+
+.source__item_hide {
+    display: none;
+}
+
+.alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.alphabet__item {
+    width: 15px;
+    text-transform: uppercase;
+    text-align: center;
 }
