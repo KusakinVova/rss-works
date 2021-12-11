@@ -18,18 +18,31 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 30px;
 }
+
+footer .githublink,
 footer .copyright {
     font-size: 14px;
-    color: #333;
+    color: #ffffff;
     text-align: center;
 }
+
 footer .copyright a {
-    color: #444;
+    color: #ffffff;
 }
+
+footer .githublink:hover,
 footer .copyright a:hover {
-    color: #555;
+    color: #69db7e;
+    transition: 0.25s;
 }
 footer .copyright:before {
     content: '©';
+}
+
+.rsslogo {
+    width: 61px;
+    height: 23px;
+    background-image: url("./assets/rs_school_js.svg");
 }
