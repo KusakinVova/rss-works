@@ -13,7 +13,10 @@ class Sources {
 
       (<HTMLElement>sourceClone.querySelector('.source__item-name')).textContent = item.name;
       (<HTMLElement>sourceClone.querySelector('.source__item')).setAttribute('data-source-id', item.id);
-      (<HTMLElement>sourceClone.querySelector('.source__item')).setAttribute('data-source-char', item.name[0].toLowerCase());
+      (<HTMLElement>sourceClone.querySelector('.source__item')).setAttribute(
+        'data-source-char',
+        item.name[0].toLowerCase()
+      );
 
       fragment.append(sourceClone);
     });
@@ -38,10 +41,9 @@ class Sources {
       char.addEventListener('click', () => {
         const charLetter = char.getAttribute('data-alphabet-char');
         listButtons.forEach((button) => {
-          if(button.getAttribute('data-source-char') !== charLetter) button.classList.add('source__item_hide');
+          if (button.getAttribute('data-source-char') !== charLetter) button.classList.add('source__item_hide');
           else button.classList.remove('source__item_hide');
         });
-        
       });
     });
   }
