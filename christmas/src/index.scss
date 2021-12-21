@@ -1,0 +1,123 @@
+@font-face { font-family: "Gilroy-Bold"; src : url("https://fonts.googleapis.com/css2?family=Neucha&display=swap") }
+
+.container {
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.hide {
+  display: none;
+}
+
+
+.start-page {
+  background-image: url("./assets/bg.jpg");
+  background-size: cover;
+}
+
+.start-page-container {
+  min-height: calc(100vh - 70px);
+}
+
+.start-page-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.ball {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ball-left {
+  width: 400px;
+  height: 500px;
+  left: 15vw;
+  top: 150px;
+  background-image: url("./assets/ball/1.png");
+}
+
+.ball-right {
+  width: 240px;
+  height: 300px;
+  top: 150px;
+  right: 15vw;
+  background-image: url("./assets/ball/2.png");
+}
+
+.start-page-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 600px;
+  height: 250px;
+  margin-top: 300px;
+  color: white;
+  font-size: 52px;
+  font-weight: normal;
+  border: 2px solid #278D9F;
+  border-radius: 30px;
+  background-color: #1f707f4d;
+  backdrop-filter: blur(10px);
+}
+
+.start-page-btn {
+  width: 200px;
+  height: 60px;
+  border: 2px solid #278D9F;
+  border-radius: 30px;
+  background-color: #1f707f4d;
+  backdrop-filter: blur(10px);
+  font-weight: lighter;
+  font-size: 22px;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.start-page-btn:hover {
+  backdrop-filter: blur(0px);
+}
+
+
+
+/* Footer */
+
+.footer {
+  background-color: #121C1E;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+
+.footer-github-link {
+  font-size: 14px;
+  padding: 0 20px;
+  transition: .3s;
+}
+
+.footer-github-link:hover {
+  color: #278D9F;
+}
+
+.rss-logo {
+  fill: white;
+  transition: .3s;
+}
+
+.rss-logo:hover {
+  fill: #278D9F;
+}
