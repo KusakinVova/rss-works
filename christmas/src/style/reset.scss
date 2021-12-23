@@ -4,10 +4,10 @@
 
 body {
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   padding: 0;
   margin: 0;
-  font-family: Neucha, sans-serif;
+  font-family: "Roboto", sans-serif;
   letter-spacing: 3px;
   color: #ffffff;
 }
@@ -15,4 +15,15 @@ body {
 a {
   text-decoration: none;
   color: #ffffff;
+}
+
+.container {
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.hide {
+  display: none;
 }
