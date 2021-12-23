@@ -115,14 +115,20 @@ function cardToBookmark() {
 
     blockChoose.innerText = countChoose;
   } else {
-    bookmarks.push(this.dataset.num);
-
-    this.classList.add('choose');
     const blockChoose = document.querySelector('.all_choose');
     let countChoose = +blockChoose.innerText + 1;
+    if(countChoose > 20){
+      alert('Нельзя выбрать больше 20ти игрушек');
+      return false;
+    }
+
+    bookmarks.push(this.dataset.num);
+    this.classList.add('choose');
     blockChoose.innerText = countChoose;
+    // console.log(bookmarks);
   }
 }
+
 
 function render() {
   const cards = data.filter((elem) => isCount(elem) && isYear(elem) && isColor(elem) && isShape(elem) && isSize(elem) && isFavorite(elem) && isSearch(elem)).sort(sortFunc).reduce((arr, elem) => `${arr}
