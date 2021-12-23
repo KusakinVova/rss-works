@@ -108,8 +108,19 @@ function isSearch(elem) {
 function cardToBookmark() {
   if (bookmarks.includes(this.dataset.num)) {
     bookmarks = bookmarks.filter((item) => item !== this.dataset.num);
+
+    this.classList.remove('choose');
+    const blockChoose = document.querySelector('.all_choose');
+    let countChoose = +blockChoose.innerText - 1;
+
+    blockChoose.innerText = countChoose;
   } else {
     bookmarks.push(this.dataset.num);
+
+    this.classList.add('choose');
+    const blockChoose = document.querySelector('.all_choose');
+    let countChoose = +blockChoose.innerText + 1;
+    blockChoose.innerText = countChoose;
   }
 }
 

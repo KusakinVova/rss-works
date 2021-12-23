@@ -53,4 +53,28 @@
   display: flex;
   gap: 30px;
   align-items: center;
+
+  &__select-toys{
+    width: 48px;
+    height: 60px;
+    background-image: url(./assets/svg/ball-2.svg);
+    background-size: 48px 60px;
+    background-position: left -8px;
+    background-repeat: no-repeat;
+    transition: .3s;
+
+    &-count{
+      display: inline-block;
+      min-width: 40px;
+      height: 40px;
+      margin-top: 10px;
+      margin-left: 4px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      font-size: 20px;
+      background-color: #278D9F;
+    }
+  }
 }
+

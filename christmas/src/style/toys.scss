@@ -325,6 +325,10 @@
   border: 1px solid #278D9F;
   background-color: #B3F6FF4D;
   cursor: pointer;
+  &.choose{
+    border: 1px solid #B3F6FF4D;
+    background-color: #278D9F;
+  }
 }
 
 .card-title {
