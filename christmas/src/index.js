@@ -202,6 +202,12 @@ function sortFunction() {
     case 'count-min':
       sortFunc = (a, b) => (+a.count < +b.count ? 1 : -1);
       break;
+    case 'year-max':
+      sortFunc = (a, b) => (+a.year > +b.year ? 1 : -1);
+      break;
+    case 'year-min':
+      sortFunc = (a, b) => (+a.year < +b.year ? 1 : -1);
+      break;
     default:
       break;
   }
