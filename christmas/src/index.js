@@ -1,6 +1,7 @@
 import './index.scss';
 
-// alert('Уважаемый проверяющий. Если у тебя еще есть ');
+alert('Уважаемый проверяющий. Из-за нагруженности на работе перед НГ, допустил ошибку в коде. Прошу проверить мою работу вечером в четверг. Спасибо тебе большое и Хорошего дня!');
+alert('мой телеграмм https://t.me/kusakinvladimir или мой дискорд KusakinVova#5305 ');
 
 import noUiSlider from 'nouislider';
 import data from './data.js';
