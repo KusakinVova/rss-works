@@ -7,13 +7,61 @@ import noUiSlider from 'nouislider';
 import data from './data.js';
 
 // =======================================================================
+document.querySelector('.controls__music').addEventListener('click', playAudio);
+
+function playAudio() {
+  const volume = document.querySelector('.controls__music');
+  const audio = document.querySelector('audio');
+  if (audio.paused && volume) {
+    audio.src = './assets/audio/audio.mp3';
+    audio.currentTime = 0;
+    audio.play();
+    volume.style.backgroundImage = 'url("../assets/svg/audio.svg")';
+  } else {
+    audio.pause();
+    volume.style.backgroundImage = 'url("../assets/svg/mute.svg")';
+  }
+}
+// =======================================================================
+document.querySelector('.controls__snow').addEventListener('click', goSnow);
+let snowfall = false;
+let goSnowFlake;
+function goSnow() {
+  const btnSnow = document.querySelector('.controls__snow');
+  if (snowfall) {
+    snowfall = false;
+    btnSnow.classList.remove('active');
+    clearInterval(goSnowFlake);
+  } else {
+    snowfall = true;
+    btnSnow.classList.add('active');
+    goSnowFlake = setInterval(createSnowFlake, 50);
+  }
+}
+
+function createSnowFlake() {
+  const snowFlake = document.createElement('i');
+  snowFlake.classList.add('fas');
+  snowFlake.classList.add('fa-snowflake');
+  snowFlake.style.left = Math.random() * window.innerWidth + 'px';
+  snowFlake.style.animationDuration = Math.random() * 3 + 2 + 's'; // between 2 - 5 seconds
+  snowFlake.style.opacity = Math.random();
+  snowFlake.style.fontSize = Math.random() * 10 + 10 + 'px';
+  document.body.appendChild(snowFlake);
+  setTimeout(() => {
+    snowFlake.remove();
+  }, 5000);
+}
+// =======================================================================
 
 const btnGotoToys = document.querySelector('.menu__btngototoys');
 const btnGotoToys2 = document.querySelector('.main-page__btn');
+const btnGotoTree = document.querySelector('.menu__btngototree');
 const btnGotoHome = document.querySelector('.menu__btngotohome');
 
 const startPage = document.querySelector('.main-page');
 const toysPage = document.querySelector('.toys-page');
+const treePage = document.querySelector('.tree-page');
 
 const cardsBlock = document.querySelector('.toys-block__cards');
 
@@ -49,12 +97,20 @@ let bookmarks = [];
 
 function gotoStart() {
   startPage.classList.add('hide');
+  treePage.classList.add('hide');
   toysPage.classList.remove('hide');
 }
 
 function gotoHome() {
-  startPage.classList.remove('hide');
   toysPage.classList.add('hide');
+  treePage.classList.add('hide');
+  startPage.classList.remove('hide');
+}
+
+function gotoTree() {
+  toysPage.classList.add('hide');
+  startPage.classList.add('hide');
+  treePage.classList.remove('hide');
 }
 
 noUiSlider.create(countSlider, {
@@ -129,7 +185,6 @@ function cardToBookmark() {
     // console.log(bookmarks);
   }
 }
-
 
 function render() {
   const cards = data.filter((elem) => isCount(elem) && isYear(elem) && isColor(elem) && isShape(elem) && isSize(elem) && isFavorite(elem) && isSearch(elem)).sort(sortFunc).reduce((arr, elem) => `${arr}
@@ -277,3 +332,5 @@ btnGotoToys.addEventListener('click', gotoStart);
 
 // toHomeBtn.addEventListener('click', gotoHome);
 btnGotoHome.addEventListener('click', gotoHome);
+
+btnGotoTree.addEventListener('click', gotoTree);

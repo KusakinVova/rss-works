@@ -76,5 +76,46 @@
       background-color: #278D9F;
     }
   }
+
+  &__snow,
+  &__music{
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__snow {
+    background-image: url("./assets/svg/snow.svg");
+    &.active{
+      animation: 5s linear 0s normal none infinite running rot360;
+      -webkit-animation: 5s linear 0s normal none infinite running rot360;
+    }
+  }
+
+  &__music {
+    background-image: url("./assets/svg/mute.svg");
+  }
 }
 
+
+@keyframes rot360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rot360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

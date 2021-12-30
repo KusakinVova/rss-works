@@ -56,6 +56,7 @@ const config = {
                 './src/style/header.scss',
                 './src/style/footer.scss',
                 './src/style/toys.scss',
+                './src/style/tree.scss',
               ],
             },
           },

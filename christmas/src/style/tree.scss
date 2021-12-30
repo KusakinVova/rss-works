@@ -1,0 +1,257 @@
+.tree-page {
+  background-color: #121C1E;
+  background-image: url(./assets/bg.jpg);
+  background-blend-mode: color-dodge;
+}
+
+.tree-page__container {
+  display: flex;
+}
+
+.tree__toys,
+.tree__setting {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.tree__select-tree_text {
+  width: 100%;
+  margin-left: 50px;
+  font-size: 30px;
+  color: #FFFFFF;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.tree__setting,
+.tree__picture,
+.tree__toys {
+  /* border: 3px solid red; */
+  height: calc(100vh - 140px);
+}
+
+.tree__setting {
+  width: 500px;
+  margin-left: 50px;
+}
+
+.tree__picture {
+  width: 800px;
+  background-image: url("./assets/bg/1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.tree__toys {
+  width: 500px;
+  margin-right: 50px;
+}
+
+.tree__toys-selected,
+.tree__decorate,
+.tree__select-garland,
+.tree__select-bg,
+.tree__select-tree {
+  /* border: 3px solid red; */
+  width: 100%;
+  display: flex;
+  // justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.tree__toys-selected {
+  justify-content: flex-start;
+}
+
+.tree__select-bg {
+  // height: 25%;
+}
+
+.tree__select-tree {
+  margin-bottom: 30px;
+}
+
+.tree__select-garland {
+  // height: 7%;
+}
+
+.tree__toys {
+  // min-height: 30%;
+}
+
+.tree-example {
+  width: 125px;
+  height: 125px;
+  border-radius: 20px;
+  border: 1px solid blue;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: rgb(206, 206, 206);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.tree-example.num1 {
+  background-image: url("./assets/tree/1.png");
+}
+
+.tree-example.num2 {
+  background-image: url("./assets/tree/2.png");
+}
+
+.tree-example.num3 {
+  background-image: url("./assets/tree/3.png");
+}
+
+.tree-example.num4 {
+  background-image: url("./assets/tree/4.png");
+}
+
+.tree-example.num5 {
+  background-image: url("./assets/tree/5.png");
+}
+
+.tree-example.num6 {
+  background-image: url("./assets/tree/6.png");
+}
+
+.bg {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  border: 1px solid rgb(255, 255, 255);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.bg.num1 {
+  background-image: url("./assets/bg/1.jpg");
+}
+
+.bg.num2 {
+  background-image: url("./assets/bg/2.jpg");
+}
+
+.bg.num3 {
+  background-image: url("./assets/bg/3.jpg");
+}
+
+.bg.num4 {
+  background-image: url("./assets/bg/4.jpg");
+}
+
+.bg.num5 {
+  background-image: url("./assets/bg/5.jpg");
+}
+
+.bg.num6 {
+  background-image: url("./assets/bg/6.jpg");
+}
+
+.bg.num7 {
+  background-image: url("./assets/bg/7.jpg");
+}
+
+.bg.num8 {
+  background-image: url("./assets/bg/8.jpg");
+}
+
+.bg.num9 {
+  background-image: url("./assets/bg/9.jpg");
+}
+
+.bg.num10 {
+  background-image: url("./assets/bg/10.jpg");
+}
+
+.garland {
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  border: 1px solid rgb(255, 255, 255);
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.garland.num1 {
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8);
+}
+
+.garland.num2 {
+  background-color: red;
+}
+
+.garland.num3 {
+  background-color: blue;
+}
+
+.garland.num4 {
+  background-color: yellow;
+}
+
+.garland.num5 {
+  background-color: green;
+}
+
+#tree-picture {
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
+.toy-selected {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  margin-top: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(206, 206, 206);
+  opacity: 0.8;
+  position: relative;
+}
+
+.toy-selected img {
+  width: 80%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1;
+}
+
+.toy-selected__count {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: 20px;
+  text-align: center;
+  color: #2b1de8;
+  width: 30px;
+  height: 30px;
+  border: 1px solid blue;
+  border-radius: 20px;
+  background-color: #1ddde8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toy-on-tree {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
