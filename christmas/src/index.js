@@ -3,8 +3,8 @@ import './index.scss';
 import noUiSlider from 'nouislider';
 import data from './data.js';
 
-alert('Уважаемый проверяющий, посмотри пожалуйста в консоль');
-console.log('Из-за нагруженности на работе перед НГ, допустил ошибку в коде.')
+// alert('Уважаемый проверяющий, посмотри пожалуйста в консоль');
+console.log('Из-за нагруженности на работе перед НГ, допустил ошибку в коде.');
 console.log('Прошу проверить мою работу в крайний срок кросчека.');
 console.log('Спасибо тебе большое и Хорошего дня!');
 console.log('мой телеграмм https://t.me/kusakinvladimir или мой дискорд KusakinVova#5305 ');
@@ -359,6 +359,7 @@ if (selectTrees) {
     el.addEventListener('click', (el2) => {
       const tree = el2.target.dataset.tree;
       const imgTree = `
+      <div class="garland-tree-container hide"></div>
       <img id="tree-picture" src="./assets/tree/${tree}.png" class="main-tree" usemap="#tree-map" alt="tree">
       <div class="tree__toys-on"></div>
       `;
@@ -399,4 +400,231 @@ function renderSelectedToys() {
   }
 }
 renderSelectedToys();
+// ===================================================================
+
+let garlandColor = 'multicolor';
+const swicherGarland = document.querySelector('.garland__checker');
+swicherGarland.addEventListener('change', function() {
+  if (this.checked) {
+    document.querySelector('.garland-tree-container').classList.remove('hide');
+    // console.log("Checkbox is checked..");
+  } else {
+    document.querySelector('.garland-tree-container').classList.add('hide');
+    // console.log("Checkbox is not checked..");
+  }
+});
+
+// выбор герлянды
+const selectGarland = document.querySelectorAll('.tree__select-garland .garland');
+if (selectGarland) {
+  selectGarland.forEach((el) => {
+    el.addEventListener('click', (el2) => {
+      const color = el2.target.dataset.color;
+      setGarland(color);
+    });
+  });
+}
+
+function setGarland(color) {
+  const garland = `
+<ul class="lightrope" style="width: 120px; height: 120px;">
+<li class="${color}" style="transform: rotate(65deg) translate(60px) rotate(-65deg);"></li>
+<li class="${color}" style="transform: rotate(77deg) translate(60px) rotate(-77deg);"></li>
+<li class="${color}" style="transform: rotate(89deg) translate(60px) rotate(-89deg);"></li>
+<li class="${color}" style="transform: rotate(101deg) translate(60px) rotate(-101deg);"></li>
+<li class="${color}" style="transform: rotate(113deg) translate(60px) rotate(-113deg);"></li>
+</ul>
+<ul class="lightrope" style="width: 170px; height: 170px;">
+<li class="${color}" style="transform: rotate(60deg) translate(85px) rotate(-60deg);"></li>
+<li class="${color}" style="transform: rotate(70deg) translate(85px) rotate(-70deg);"></li>
+<li class="${color}" style="transform: rotate(80deg) translate(85px) rotate(-80deg);"></li>
+<li class="${color}" style="transform: rotate(90deg) translate(85px) rotate(-90deg);"></li>
+<li class="${color}" style="transform: rotate(100deg) translate(85px) rotate(-100deg);"></li>
+<li class="${color}" style="transform: rotate(110deg) translate(85px) rotate(-110deg);"></li>
+<li class="${color}" style="transform: rotate(120deg) translate(85px) rotate(-120deg);"></li>
+<li class="${color}" style="transform: rotate(130deg) translate(85px) rotate(-130deg);"></li>
+</ul>
+<ul class="lightrope" style="width: 230px; height: 230px;">
+<li class="${color}" style="transform: rotate(60deg) translate(115px) rotate(-60deg);"></li>
+<li class="${color}" style="transform: rotate(68deg) translate(115px) rotate(-68deg);"></li>
+<li class="${color}" style="transform: rotate(76deg) translate(115px) rotate(-76deg);"></li>
+<li class="${color}" style="transform: rotate(84deg) translate(115px) rotate(-84deg);"></li>
+<li class="${color}" style="transform: rotate(92deg) translate(115px) rotate(-92deg);"></li>
+<li class="${color}" style="transform: rotate(100deg) translate(115px) rotate(-100deg);"></li>
+<li class="${color}" style="transform: rotate(108deg) translate(115px) rotate(-108deg);"></li>
+<li class="${color}" style="transform: rotate(116deg) translate(115px) rotate(-116deg);"></li>
+<li class="${color}" style="transform: rotate(124deg) translate(115px) rotate(-124deg);"></li>
+<li class="${color}" style="transform: rotate(132deg) translate(115px) rotate(-132deg);"></li>
+<li class="${color}" style="transform: rotate(140deg) translate(115px) rotate(-140deg);"></li>
+</ul>
+<ul class="lightrope" style="width: 300px; height: 300px;">
+<li class="${color}" style="transform: rotate(60deg) translate(150px) rotate(-60deg);"></li>
+<li class="${color}" style="transform: rotate(66deg) translate(150px) rotate(-66deg);"></li>
+<li class="${color}" style="transform: rotate(72deg) translate(150px) rotate(-72deg);"></li>
+<li class="${color}" style="transform: rotate(78deg) translate(150px) rotate(-78deg);"></li>
+<li class="${color}" style="transform: rotate(84deg) translate(150px) rotate(-84deg);"></li>
+<li class="${color}" style="transform: rotate(90deg) translate(150px) rotate(-90deg);"></li>
+<li class="${color}" style="transform: rotate(96deg) translate(150px) rotate(-96deg);"></li>
+<li class="${color}" style="transform: rotate(102deg) translate(150px) rotate(-102deg);"></li>
+<li class="${color}" style="transform: rotate(108deg) translate(150px) rotate(-108deg);"></li>
+<li class="${color}" style="transform: rotate(114deg) translate(150px) rotate(-114deg);"></li>
+<li class="${color}" style="transform: rotate(120deg) translate(150px) rotate(-120deg);"></li>
+<li class="${color}" style="transform: rotate(126deg) translate(150px) rotate(-126deg);"></li>
+<li class="${color}" style="transform: rotate(132deg) translate(150px) rotate(-132deg);"></li>
+<li class="${color}" style="transform: rotate(138deg) translate(150px) rotate(-138deg);"></li>
+</ul>
+<ul class="lightrope" style="width: 380px; height: 380px;">
+<li class="${color}" style="transform: rotate(60deg) translate(190px) rotate(-60deg);"></li>
+<li class="${color}" style="transform: rotate(64deg) translate(190px) rotate(-64deg);"></li>
+<li class="${color}" style="transform: rotate(68deg) translate(190px) rotate(-68deg);"></li>
+<li class="${color}" style="transform: rotate(72deg) translate(190px) rotate(-72deg);"></li>
+<li class="${color}" style="transform: rotate(76deg) translate(190px) rotate(-76deg);"></li>
+<li class="${color}" style="transform: rotate(80deg) translate(190px) rotate(-80deg);"></li>
+<li class="${color}" style="transform: rotate(84deg) translate(190px) rotate(-84deg);"></li>
+<li class="${color}" style="transform: rotate(88deg) translate(190px) rotate(-88deg);"></li>
+<li class="${color}" style="transform: rotate(92deg) translate(190px) rotate(-92deg);"></li>
+<li class="${color}" style="transform: rotate(96deg) translate(190px) rotate(-96deg);"></li>
+<li class="${color}" style="transform: rotate(100deg) translate(190px) rotate(-100deg);"></li>
+<li class="${color}" style="transform: rotate(104deg) translate(190px) rotate(-104deg);"></li>
+<li class="${color}" style="transform: rotate(108deg) translate(190px) rotate(-108deg);"></li>
+<li class="${color}" style="transform: rotate(112deg) translate(190px) rotate(-112deg);"></li>
+<li class="${color}" style="transform: rotate(116deg) translate(190px) rotate(-116deg);"></li>
+<li class="${color}" style="transform: rotate(120deg) translate(190px) rotate(-120deg);"></li>
+<li class="${color}" style="transform: rotate(124deg) translate(190px) rotate(-124deg);"></li>
+</ul>
+<ul class="lightrope" style="width: 470px; height: 470px;">
+<li class="${color}" style="transform: rotate(60deg) translate(235px) rotate(-60deg);"></li>
+<li class="${color}" style="transform: rotate(64deg) translate(235px) rotate(-64deg);"></li>
+<li class="${color}" style="transform: rotate(68deg) translate(235px) rotate(-68deg);"></li>
+<li class="${color}" style="transform: rotate(72deg) translate(235px) rotate(-72deg);"></li>
+<li class="${color}" style="transform: rotate(76deg) translate(235px) rotate(-76deg);"></li>
+<li class="${color}" style="transform: rotate(80deg) translate(235px) rotate(-80deg);"></li>
+<li class="${color}" style="transform: rotate(84deg) translate(235px) rotate(-84deg);"></li>
+<li class="${color}" style="transform: rotate(88deg) translate(235px) rotate(-88deg);"></li>
+<li class="${color}" style="transform: rotate(92deg) translate(235px) rotate(-92deg);"></li>
+<li class="${color}" style="transform: rotate(96deg) translate(235px) rotate(-96deg);"></li>
+<li class="${color}" style="transform: rotate(100deg) translate(235px) rotate(-100deg);"></li>
+<li class="${color}" style="transform: rotate(104deg) translate(235px) rotate(-104deg);"></li>
+<li class="${color}" style="transform: rotate(108deg) translate(235px) rotate(-108deg);"></li>
+<li class="${color}" style="transform: rotate(112deg) translate(235px) rotate(-112deg);"></li>
+<li class="${color}" style="transform: rotate(116deg) translate(235px) rotate(-116deg);"></li>
+<li class="${color}" style="transform: rotate(120deg) translate(235px) rotate(-120deg);"></li>
+<li class="${color}" style="transform: rotate(124deg) translate(235px) rotate(-124deg);"></li>
+</ul>
+<ul class="lightrope" style="width: 570px; height: 570px;">
+<li class="${color}" style="transform: rotate(60deg) translate(285px) rotate(-60deg);"></li>
+<li class="${color}" style="transform: rotate(64deg) translate(285px) rotate(-64deg);"></li>
+<li class="${color}" style="transform: rotate(68deg) translate(285px) rotate(-68deg);"></li>
+<li class="${color}" style="transform: rotate(72deg) translate(285px) rotate(-72deg);"></li>
+<li class="${color}" style="transform: rotate(76deg) translate(285px) rotate(-76deg);"></li>
+<li class="${color}" style="transform: rotate(80deg) translate(285px) rotate(-80deg);"></li>
+<li class="${color}" style="transform: rotate(84deg) translate(285px) rotate(-84deg);"></li>
+<li class="${color}" style="transform: rotate(88deg) translate(285px) rotate(-88deg);"></li>
+<li class="${color}" style="transform: rotate(92deg) translate(285px) rotate(-92deg);"></li>
+<li class="${color}" style="transform: rotate(96deg) translate(285px) rotate(-96deg);"></li>
+<li class="${color}" style="transform: rotate(100deg) translate(285px) rotate(-100deg);"></li>
+<li class="${color}" style="transform: rotate(104deg) translate(285px) rotate(-104deg);"></li>
+<li class="${color}" style="transform: rotate(108deg) translate(285px) rotate(-108deg);"></li>
+<li class="${color}" style="transform: rotate(112deg) translate(285px) rotate(-112deg);"></li>
+<li class="${color}" style="transform: rotate(116deg) translate(285px) rotate(-116deg);"></li>
+<li class="${color}" style="transform: rotate(120deg) translate(285px) rotate(-120deg);"></li>
+<li class="${color}" style="transform: rotate(124deg) translate(285px) rotate(-124deg);"></li>
+</ul>`;
+  document.querySelector('.garland-tree-container').innerHTML = garland;
+}
+setGarland(garlandColor);
+
+// ===================================================================
+// отслеживаем начало перемещения (drag) игрушек на елку
+
+function drag() {
+  const toys = document.querySelectorAll('.toy-selected img');
+
+  if (toys) {
+    toys.forEach((el) => {
+      el.addEventListener('dragstart', (el2) => {
+        console.log(el2);/*
+        const item = el2;
+        const target = el2.target; // as EventTarget & { dataset: Record<string, string> };
+        const { num } = target.dataset;
+        if (item.dataTransfer) item.dataTransfer.setData('id', num);
+        if (item.dataTransfer) item.dataTransfer.setData('out', 'true');
+        if (item.dataTransfer) item.dataTransfer.setData('offsetX', String(item.offsetX));
+        if (item.dataTransfer) item.dataTransfer.setData('offsetY', String(item.offsetY));*/
+      });
+    });
+  }
+}
+drag();
+
+
+    //  // отображаем игрушки
+    //  if (Module.currentTreeSection.toys.length > 0) {
+    //   const toyOn = document.querySelector('.tree__toys-on');
+
+    //   if (toyOn) toyOn.innerHTML = '';
+    //   Module.currentTreeSection.toys.forEach((el, i) => {
+
+    //     toyOn!.innerHTML += `
+    //       <img class="toy-on-tree" src="../assets/toys/${el.numberToy}.png" data-num="${el.numberToy}" data-numi="${i}" alt="pict" draggable="true" style="top: ${el.position[1]}px; left: ${el.position[0]}px;">
+    //       `;
+    //   });
+    // }
+
+    // // отслеживаем "бросания" (drop) на елку
+    // const tree = document.querySelector('#tree-picture');
+    // if (tree) tree.addEventListener('dragover', (ev) => {
+    //   ev.preventDefault()
+    // })
+    // if (tree) tree.addEventListener('drop', (el) => {
+    //   const target = el as DragEvent & { layerX: string, layerY: string };
+    //   const outToy = target.dataTransfer?.getData('out');
+
+    //   if (outToy == 'true') {
+    //     const id: string | undefined = target.dataTransfer?.getData('id');
+    //     if (id && +Module.data[+id - 1].count > 0) {
+    //       Module.currentTreeSection.toys.push({
+    //         numberToy: `${target.dataTransfer?.getData('id')}`,
+    //         position: [+`${target.layerX}` - +target.dataTransfer!.getData('offsetX'), +`${target.layerY}` - +target.dataTransfer!.getData('offsetY')]
+    //       });
+    //       const oldCount: number = (+Module.data[+id - 1].count);
+    //       Module.data[+id - 1].count = String(oldCount - 1);
+
+    //     }
+    //   } else if (outToy == 'false') {
+    //     Module.currentTreeSection.toys[+target.dataTransfer?.getData('id')!].position = [+`${target.layerX}` - +target.dataTransfer!.getData('offsetX'), +`${target.layerY}` - +target.dataTransfer!.getData('offsetY')];
+    //   }
+    //   View.renderTreePage();
+    // });
+
+    // отслеживаем начало перемещения игрушек с елки
+    // dragToy();
+function dragToy() {
+  const toys = document.querySelectorAll('.toy-on-tree');
+  if (toys) {
+    toys.forEach((el) => {
+      el.addEventListener('dragstart', (el2) => {
+        const item = el2;
+        const target = el2.target;// as EventTarget & { dataset: Record<string, string> };
+        const { numi } = target.dataset;
+
+        if (item.dataTransfer) item.dataTransfer.setData('id', numi);
+        if (item.dataTransfer) item.dataTransfer.setData('out', 'false');
+        if (item.dataTransfer) item.dataTransfer.setData('offsetX', item.offsetX);
+        if (item.dataTransfer) item.dataTransfer.setData('offsetY', item.offsetY);
+        el.addEventListener('dragend', (el3) => {
+          const target = el3;// as DragEvent;
+          if (target.dataTransfer.dropEffect == 'none') {
+            const numToy = +Module.currentTreeSection.toys[+numi].numberToy;
+            // Module.data[numToy - 1].count = String(+Module.data[numToy - 1].count + 1);
+            // Module.currentTreeSection.toys.splice(+numi, 1);
+            toys.splice(+numi, 1);
+            // View.renderTreePage();
+          }
+        });
+      });
+    });
+  }
+}
+dragToy();
 // ===================================================================
