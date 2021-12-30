@@ -3,7 +3,7 @@ import './index.scss';
 import noUiSlider from 'nouislider';
 import data from './data.js';
 
-alert('Уважаемый проверяющий, посмотри пожалуйста в консоль');
+// alert('Уважаемый проверяющий, посмотри пожалуйста в консоль');
 console.log('Из-за нагруженности на работе перед НГ, допустил ошибку в коде.')
 console.log('Прошу проверить мою работу в крайний срок кросчека.');
 console.log('Спасибо тебе большое и Хорошего дня!');
@@ -174,6 +174,7 @@ function cardToBookmark() {
     let countChoose = +blockChoose.innerText - 1;
 
     blockChoose.innerText = countChoose;
+    renderSelectedToys();
   } else {
     const blockChoose = document.querySelector('.all_choose');
     let countChoose = +blockChoose.innerText + 1;
@@ -185,7 +186,7 @@ function cardToBookmark() {
     bookmarks.push(this.dataset.num);
     this.classList.add('choose');
     blockChoose.innerText = countChoose;
-    // console.log(bookmarks);
+    renderSelectedToys();
   }
 }
 
@@ -357,11 +358,45 @@ if (selectTrees) {
   selectTrees.forEach((el) => {
     el.addEventListener('click', (el2) => {
       const tree = el2.target.dataset.tree;
-      const imgTree = `<img src="./assets/tree/${tree}.png" alt="Tree">`;
+      const imgTree = `
+      <img id="tree-picture" src="./assets/tree/${tree}.png" class="main-tree" usemap="#tree-map" alt="tree">
+      <div class="tree__toys-on"></div>
+      `;
       if (document.querySelector('.tree__picture')) {
         document.querySelector('.tree__picture').innerHTML = imgTree;
       }
     });
   });
 }
+// ===================================================================
+
+function renderSelectedToys() {
+  // заполняем отобранными игрушками
+  const treeToys = document.querySelector('.tree__toys-selected');
+  if (treeToys) treeToys.innerHTML = '';
+  if (bookmarks.length > 0) {
+    bookmarks.forEach((el) => {
+      if (treeToys) {
+        treeToys.innerHTML += `
+        <div class="toy-selected">
+            <img src="./assets/toys/${el}.png" alt="pict" draggable="true" data-num="${el}">
+            <div class="toy-selected__count">${data[el].count}</div>
+        </div>
+        `;
+      }
+    });
+  } else {
+    for (let i = 0; i < 20; i++) {
+      if (treeToys) {
+        treeToys.innerHTML += `
+        <div class="toy-selected">
+            <img src="./assets/toys/${i + 1}.png" alt="pict" draggable="true" data-num="${i + 1}">
+            <div class="toy-selected__count">${data[i].count}</div>
+        </div>
+        `;
+      }
+    }
+  }
+}
+renderSelectedToys();
 // ===================================================================
