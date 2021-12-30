@@ -357,7 +357,7 @@ if (selectTrees) {
   selectTrees.forEach((el) => {
     el.addEventListener('click', (el2) => {
       const tree = el2.target.dataset.tree;
-      const imgTree = `<img src="../assets/tree/${tree}.png" alt="Tree">`;
+      const imgTree = `<img src="./assets/tree/${tree}.png" alt="Tree">`;
       if (document.querySelector('.tree__picture')) {
         document.querySelector('.tree__picture').innerHTML = imgTree;
       }
