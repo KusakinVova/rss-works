@@ -3,7 +3,7 @@ import './index.scss';
 import noUiSlider from 'nouislider';
 import data from './data.js';
 
-alert('Уважаемый проверяющий, посмотри пожалуйста в консоль');
+// alert('Уважаемый проверяющий, посмотри пожалуйста в консоль');
 console.log('Из-за нагруженности на работе перед НГ, допустил ошибку в коде.')
 console.log('Прошу проверить мою работу в крайний срок кросчека.');
 console.log('Спасибо тебе большое и Хорошего дня!');
@@ -337,3 +337,31 @@ btnGotoToys.addEventListener('click', gotoStart);
 btnGotoHome.addEventListener('click', gotoHome);
 
 btnGotoTree.addEventListener('click', gotoTree);
+
+// ===================================================================
+// выбор фона елки
+const selectBG = document.querySelectorAll('.tree__select-bg .bg');
+if (selectBG) {
+  selectBG.forEach((el) => {
+    el.addEventListener('click', (el2) => {
+      const numbBg = el2.target.dataset.bg;
+      const bgImg = `url("./assets/bg/${numbBg}.jpg")`;
+      document.querySelector('.tree__picture').style.backgroundImage = bgImg;
+    });
+  });
+}
+// ===================================================================
+// выбор елки
+const selectTrees = document.querySelectorAll('.tree__select-tree .tree-example');
+if (selectTrees) {
+  selectTrees.forEach((el) => {
+    el.addEventListener('click', (el2) => {
+      const tree = el2.target.dataset.tree;
+      const imgTree = `<img src="../assets/tree/${tree}.png" alt="Tree">`;
+      if (document.querySelector('.tree__picture')) {
+        document.querySelector('.tree__picture').innerHTML = imgTree;
+      }
+    });
+  });
+}
+// ===================================================================
