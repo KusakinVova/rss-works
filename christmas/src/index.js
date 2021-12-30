@@ -18,10 +18,10 @@ function playAudio() {
     audio.src = './assets/audio/audio.mp3';
     audio.currentTime = 0;
     audio.play();
-    volume.style.backgroundImage = 'url("../assets/svg/audio.svg")';
+    volume.style.backgroundImage = 'url("./assets/svg/audio.svg")';
   } else {
     audio.pause();
-    volume.style.backgroundImage = 'url("../assets/svg/mute.svg")';
+    volume.style.backgroundImage = 'url("./assets/svg/mute.svg")';
   }
 }
 // =======================================================================
