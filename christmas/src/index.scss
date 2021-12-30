@@ -76,3 +76,17 @@
 }
 
 
+.snowflake {
+  color: #fff;
+  position: absolute;
+  top: -20px;
+  animation: snowfall linear forwards;
+  background-size: contain;
+  background-image: url("./assets/svg/snow.svg");
+}
+
+@keyframes snowfall {
+  to {
+    transform: translateY(105vh);
+  }
+}
