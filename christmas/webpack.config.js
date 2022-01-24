@@ -9,7 +9,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader';
 
 const config = {
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
@@ -53,11 +53,6 @@ const config = {
             options: {
               resources: [
                 './src/style/reset.scss',
-                './src/style/header.scss',
-                './src/style/footer.scss',
-                './src/style/toys.scss',
-                './src/style/tree.scss',
-                './src/style/garland.scss',
               ],
             },
           },
