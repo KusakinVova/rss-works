@@ -20,8 +20,6 @@
       </ul>
     </nav>
     <div class="controls">
-      <span class="controls__music"></span>
-      <span class="controls__snow"></span>
       <input type="search" class="control__search" autocomplete="off" placeholder="Поиск" autofocus />
       <div class="controls__select-toys">
         <span class="controls__select-toys-count all_choose">0</span>
@@ -29,7 +27,7 @@
     </div>
   </header>
 
-  <div class="main-page">
+  <div class="main-page pages">
     <div class="container main-page__container">
       <div class="main-page__content">
         <div class="ball ball_left"></div>
@@ -40,7 +38,8 @@
     </div>
   </div>
 
-  <div class="toys-page hide">
+  <div class="toys-page pages hide">
+    
     <div class="container toys-page__container">
       <section class="filter">
 
@@ -50,8 +49,8 @@
               <option selected value="disabled">без сортировки</option>
               <option value="name-max">по названию от А до Я</option>
               <option value="name-min">по названию от Я до А</option>
-              <option value="count-max">по количеству по возрастанию</option>
-              <option value="count-min">по количеству по убыванию</option>
+              <option value="count-max">количество по возрастанию</option>
+              <option value="count-min">количество по убыванию</option>
               <option value="year-max">год по возрастанию</option>
               <option value="year-min">год по убыванию</option>
             </select>
@@ -68,18 +67,18 @@
           </div>
           <div class="filter__count">
             <p class="filter__label">Количество экземпляров</p>
-            <div class="count-slider-container"></div>
-            <div class="count-values">
-              <div class="count-min"></div>
-              <div class="count-max"></div>
+            <div class="count-slider-container">
+              <div class="slider"></div>
+              <span class="from"></span>
+              <span class="to"></span>
             </div>
           </div>
           <div class="filter__year">
             <p class="filter__label">Год приобретения</p>
-            <div class="year-slider-container"></div>
-            <div class="year-values">
-              <div class="year-min"></div>
-              <div class="year-max"></div>
+            <div class="year-slider-container">
+              <div class="slider"></div>
+              <span class="from"></span>
+              <span class="to"></span>
             </div>
           </div>
           <div class="filter__color">
@@ -95,12 +94,9 @@
           <div class="filter__size">
             <p class="filter__label">Размер</p>
             <div class="filter__size-elem">
-              <input type="checkbox" class="checkbox" id="checkbox-big" data-size="большой">
-              <label for="checkbox-big">Большие</label>
-              <input type="checkbox" class="checkbox" id="checkbox-medium" data-size="средний">
-              <label for="checkbox-medium">Средние</label>
-              <input type="checkbox" class="checkbox" id="checkbox-small" data-size="малый">
-              <label for="checkbox-small">Маленькие</label>
+              <button class="filter__size-button filter__size-button_xl" data-size="большой"></button>
+              <button class="filter__size-button filter__size-button_m" data-size="средний"></button>
+              <button class="filter__size-button filter__size-button_s" data-size="малый"></button>
             </div>
           </div>
           <div class="filter__favorite">
@@ -120,10 +116,15 @@
     </div>
   </div>
 
-  <div class="tree-page hide">
+  <div class="tree-page pages hide">
     <div class="container tree-page__container">
 
       <div class="container tree__setting">
+        <div class="controls">
+          <span class="controls__music"></span>
+          <span class="controls__snow"></span>
+          <button class="button tree-page__reset-settings">Сбросить настройки</button>
+        </div>
         <div class="tree__select-tree_text">Выберите елку</div>
         <div class="tree__select-tree">
           <div class="tree-example num1" data-tree="1"></div>
@@ -147,23 +148,26 @@
           <div class="bg num10" data-bg="10"></div>
         </div>
         <div class="tree__select-tree_text">Гирлянда</div>
-        <div class="tree__select-garland">
-          <div class="garland num1" data-color="multicolor"></div>
-          <div class="garland num2" data-color="red"></div>
-          <div class="garland num3" data-color="blue"></div>
-          <div class="garland num4" data-color="yellow"></div>
-          <div class="garland num5" data-color="green"></div>
-          <input type="checkbox" class="garland__checker" value="multicolor">
+        <div class="lights-settings">
+          <button class="lights__color-button color" data-color="color"></button>
+          <button class="lights__color-button red" data-color="red"></button>
+          <button class="lights__color-button blue"  data-color="blue"></button>
+          <button class="lights__color-button yellow"  data-color="yellow"></button>
+          <button class="lights__color-button green"  data-color="green"></button>
+          <div class="lights__switch-button">
+            <div class="lights__swither"></div>
+          </div>
         </div>
       </div>
       <div class="main-tree-container">
       </div>
       
       <div class="container tree__picture">
-      <!-- <map name="tree-map">
-      <area shape="poly" coords="365,699,189,706,113,683,31,608,2,555,2,539,18,437,73,351,106,224,161,134,243,-1,306,75,353,144,399,221,424,359,452,459,496,550,444,664">
-      </map> -->
-        <div class="garland-tree-container hide"></div>
+        <div class="snow"></div>
+        <div class="lights"></div>
+        <map name="tree-map">
+          <area shape="poly" coords="365,699,189,706,113,683,31,608,2,555,2,539,18,437,73,351,106,224,161,134,243,-1,306,75,353,144,399,221,424,359,452,459,496,550,444,664">
+        </map>
         <img id="tree-picture" src="assets/tree/3.png" class="main-tree" usemap="#tree-map" alt="tree">   
         <div class="tree__toys-on"></div>
       </div>
@@ -171,16 +175,6 @@
       <div class="container tree__toys">
         <div class="tree__select-tree_text">Игрушки</div>
         <div class="tree__toys-selected">
-            
-        </div>
-        <div class="tree__select-tree_text">Вы нарядили</div>
-        <div class="tree__decorate">
-          <div class="tree-example num1"></div>
-          <div class="tree-example num2"></div>
-          <div class="tree-example num3"></div>
-          <div class="tree-example num4"></div>
-          <div class="tree-example num5"></div>
-          <div class="tree-example num6"></div>
         </div>
       </div>
 
@@ -192,14 +186,13 @@
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-github">
-        <a class="footer-github-link" href="https://github.com/kusakinvova" target="_blank">github</a>
+        <a class="footer-github-link" href="https://github.com/kusakinvova" target="_blank">Vladimir K.</a>
       </div>
       <a class="rss-logo" href="https://rs.school/js/" target="_blank">
         <img src="./assets/svg/rss.svg"  width="160" height="60" alt="rss logo">
       </a>
     </div>
   </footer>
-  <audio></audio>
 </body>
 
 </html>

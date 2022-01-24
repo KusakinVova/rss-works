@@ -27,7 +27,7 @@
 .logo {
   width: 48px;
   height: 60px;
-  background-image: url(./assets/svg/tree.svg);
+  background-image: url("./assets/svg/tree.svg");
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -99,6 +99,9 @@
 
   &__music {
     background-image: url("./assets/svg/mute.svg");
+    &.active {
+      background-image: url("./assets/svg/audio.svg");
+    }
   }
 }
 

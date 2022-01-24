@@ -1,6 +1,6 @@
 .tree-page {
   background-color: #121C1E;
-  background-image: url(./assets/bg.jpg);
+  background-image: url("./assets/bg.jpg");
   background-blend-mode: color-dodge;
 }
 
@@ -33,6 +33,7 @@
 .tree__setting {
   width: 500px;
   margin-left: 50px;
+  padding-top: 10px;
 }
 
 .tree__picture {
@@ -52,21 +53,50 @@
 
 .tree__toys-selected,
 .tree__decorate,
-.tree__select-garland,
 .tree__select-bg,
 .tree__select-tree {
-  /* border: 3px solid red; */
   width: 100%;
   display: flex;
-  // justify-content: space-around;
   flex-wrap: wrap;
   margin-bottom: 30px;
   justify-content: flex-start;
   gap: 10px;
 }
 
-.tree__toys-selected {
-  justify-content: flex-start;
+.tree-toy {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,.6);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  &__count {
+    background-color: #278d9f;
+    height: 22px;
+    width: 22px;
+    border-radius: 10px;
+    align-self: flex-end;
+    font-size: 16px;
+    margin: 0 55px 2px 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  &__image {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+   touch-action: none;
+   cursor: pointer;
+  }
+
 }
 
 .tree__select-bg {
@@ -75,10 +105,6 @@
 
 .tree__select-tree {
   margin-bottom: 30px;
-}
-
-.tree__select-garland {
-  // height: 7%;
 }
 
 .tree__toys {
@@ -123,8 +149,8 @@
 }
 
 .bg {
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   border-radius: 10px;
   border: 1px solid rgb(255, 255, 255);
   background-position: center;
@@ -174,34 +200,53 @@
   background-image: url("./assets/bg/10.jpg");
 }
 
-.garland {
-  width: 30px;
-  height: 30px;
-  border-radius: 20px;
-  border: 1px solid rgb(255, 255, 255);
-  margin-top: 5px;
-  cursor: pointer;
+.lights {
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__color-button {
+    &:hover {
+      box-shadow: rgb(0 0 0 / 20%) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
+        #ccc 0 2px 50px;
+    }
+  }
+
+
+  &__switch-button {
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    background-color: grey;
+    border-radius: 20px;
+    padding: 5px;
+    transition: all 0.3s;
+  }
+
+  &__switch-button.on {
+    background-color: #278d9f;
+  }
+
+  &__swither {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.3s;
+    transform: translateX(0%);
+  }
+
+  &__swither.on {
+    transform: translateX(150%);
+  }
 }
 
-.garland.num1 {
-  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8);
-}
 
-.garland.num2 {
-  background-color: red;
-}
 
-.garland.num3 {
-  background-color: blue;
-}
 
-.garland.num4 {
-  background-color: yellow;
-}
-
-.garland.num5 {
-  background-color: green;
-}
 
 #tree-picture {
   margin-left: auto;
@@ -255,4 +300,22 @@
   width: 72px;
   height: 72px;
   object-fit: contain;
+}
+
+.tree-page__reset-settings {
+  width: 200px;
+  height: 35px;
+  border: 2px solid #278D9F;
+  border-radius: 30px;
+  background-color: #1f707f4d;
+  font-weight: lighter;
+  font-size: 16px;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+  // margin: 20px;
+  
+  &:hover {
+    background-color: #1f717f;
+  }
 }
