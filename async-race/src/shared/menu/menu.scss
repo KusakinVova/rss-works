@@ -1,0 +1,20 @@
+.menu {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  &__button {
+    background: none;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      color: #198313;
+      border-color: #198313;
+      background: none;
+    }
+  }
+}

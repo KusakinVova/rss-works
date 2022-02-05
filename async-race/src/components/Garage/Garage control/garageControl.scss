@@ -1,0 +1,31 @@
+.garage-control {
+  display: flex;
+  max-width: 450px;
+  flex-direction: column;
+  gap: 12px;
+  margin: 10px auto 0;
+}
+
+
+.create-car_inputs,
+.update-car_inputs,
+.control-buttons {
+  display: flex;
+  gap: 4px;
+  // align-items: center;
+  align-items: stretch;
+  height: max-content;
+}
+
+.create-car_inputs,
+.update-car_inputs {
+  & .text-input {
+    flex-grow: 2;
+  }
+}
+
+.control-buttons {
+  & .button_blue {
+    flex-grow: 2;
+  }
+}

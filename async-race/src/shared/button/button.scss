@@ -1,0 +1,43 @@
+.button {
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  text-transform: uppercase;
+  color: #000000;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &_green {
+    width: 7rem;
+    background-color: #6BC166;
+  }
+
+  &_blue {
+    background-color: #5EB1AD;
+  }
+
+  &_line {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    border: none;
+    background-color: #6bc166;
+    font-weight: normal;
+    padding: 0;
+  }
+
+  &:hover{
+    background-color: #ffd000;
+  }
+
+  &_disabled {
+    opacity: 0.5;
+    cursor: default;
+    &:hover{
+      background-color: #6bc166;
+    }
+  }
+}
+

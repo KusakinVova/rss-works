@@ -59,7 +59,7 @@ module.exports = ({ development }) => ({
   plugins: [
     ...esLintPlugin(development),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
-    new HtmlWebpackPlugin({ title: 'Async Race' }),
+    new HtmlWebpackPlugin({ title: 'Async Race', favicon: "./src/assets/flag.svg" }),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
   ],
   resolve: {

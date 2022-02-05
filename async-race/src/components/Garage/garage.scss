@@ -1,0 +1,44 @@
+.garage {
+  color: white;
+  position: relative;
+
+  & .cars-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  & .pagination-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  & .visually-hidden {
+    visibility: hidden;
+  }
+
+  & .win-message-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    max-width: 100%;
+    width: 450px;
+    left: calc(50% - 225px);
+    top: 20%;
+    color: #198313;
+    font-size: 32px;
+    z-index: 1;
+    text-shadow: 2px 3px 3px black;
+    box-sizing: border-box;
+    padding: 20px 40px;
+    text-align: center;
+    background-color: rgb(255 255 255 / 80%);
+  }
+}
+
