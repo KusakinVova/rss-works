@@ -1,0 +1,48 @@
+body {
+    color: #fff;
+    background: #17181c;
+    font-family: sans-serif;
+}
+
+header {
+    padding: 10px 30px;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+footer {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+footer .githublink,
+footer .copyright {
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+}
+
+footer .copyright a {
+    color: #ffffff;
+}
+
+footer .githublink:hover,
+footer .copyright a:hover {
+    color: #69db7e;
+    transition: 0.25s;
+}
+footer .copyright:before {
+    content: '©';
+}
+
+.rsslogo {
+    width: 61px;
+    height: 23px;
+    background-image: url("./assets/rs_school_js.svg");
+}
