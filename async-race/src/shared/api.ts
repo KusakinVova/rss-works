@@ -9,7 +9,8 @@ import { IWinnerTime, IWinner } from './models/modelWinner';
 import { IWinners } from './models/modelPageWinners';
 
 class Api {
-  private base = 'http://localhost:3000';
+  // private base = 'http://localhost:3000';
+  private base = 'https://reminiscent-abalone-loganberry.glitch.me';
 
   private garage = `${this.base}/garage`;
 
