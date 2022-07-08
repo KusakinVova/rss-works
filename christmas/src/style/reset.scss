@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 3px;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.hide {
+  display: none;
+}

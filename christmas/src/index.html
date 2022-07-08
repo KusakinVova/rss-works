@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christmas-task</title>
+  <link rel="shortcut icon" href="./assets/favicon.ico">
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <ul class="menu">
+        <li><a class="menu__item menu__btngotohome logo" href="#"></a></li>
+        <li><a class="menu__item menu__btngototoys" href="#">Игрушки</a></li> 
+        <li><a class="menu__item menu__btngototree" href="#">Ёлка</a></li>
+      </ul>
+    </nav>
+    <div class="controls">
+      <span class="controls__music"></span>
+      <span class="controls__snow"></span>
+      <input type="search" class="control__search" autocomplete="off" placeholder="Поиск" autofocus />
+      <div class="controls__select-toys">
+        <span class="controls__select-toys-count all_choose">0</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-page">
+    <div class="container main-page__container">
+      <div class="main-page__content">
+        <div class="ball ball_left"></div>
+        <div class="ball ball_right"></div>
+        <h1 class="main-page__title">Новогодняя игра<br>«Наряди ёлку»</h1>
+        <button class="main-page__btn">Начать</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toys-page hide">
+    <div class="container toys-page__container">
+      <section class="filter">
+
+          <div class="filter__select">
+            <p class="filter__label filter__label_select">Сортировать</p>
+            <select class="filter__select-elem">
+              <option selected value="disabled">без сортировки</option>
+              <option value="name-max">по названию от А до Я</option>
+              <option value="name-min">по названию от Я до А</option>
+              <option value="count-max">по количеству по возрастанию</option>
+              <option value="count-min">по количеству по убыванию</option>
+              <option value="year-max">год по возрастанию</option>
+              <option value="year-min">год по убыванию</option>
+            </select>
+          </div>
+          <div class="filter__shape">
+            <p class="filter__label">Форма</p>
+            <div class="shape-select">
+              <button class="" data-shape="шар"></button>
+              <button class="" data-shape="колокольчик"></button>
+              <button class="" data-shape="шишка"></button>
+              <button class="" data-shape="снежинка"></button>
+              <button class="" data-shape="фигурка"></button>
+            </div>
+          </div>
+          <div class="filter__count">
+            <p class="filter__label">Количество экземпляров</p>
+            <div class="count-slider-container"></div>
+            <div class="count-values">
+              <div class="count-min"></div>
+              <div class="count-max"></div>
+            </div>
+          </div>
+          <div class="filter__year">
+            <p class="filter__label">Год приобретения</p>
+            <div class="year-slider-container"></div>
+            <div class="year-values">
+              <div class="year-min"></div>
+              <div class="year-max"></div>
+            </div>
+          </div>
+          <div class="filter__color">
+            <p class="filter__label">Цвет</p>
+            <div class="color-select">
+              <button class="" data-color="белый"></button>
+              <button class="" data-color="желтый"></button>
+              <button class="" data-color="красный"></button>
+              <button class="" data-color="синий"></button>
+              <button class="" data-color="зелёный"></button>
+            </div>
+          </div>
+          <div class="filter__size">
+            <p class="filter__label">Размер</p>
+            <div class="filter__size-elem">
+              <input type="checkbox" class="checkbox" id="checkbox-big" data-size="большой">
+              <label for="checkbox-big">Большие</label>
+              <input type="checkbox" class="checkbox" id="checkbox-medium" data-size="средний">
+              <label for="checkbox-medium">Средние</label>
+              <input type="checkbox" class="checkbox" id="checkbox-small" data-size="малый">
+              <label for="checkbox-small">Маленькие</label>
+            </div>
+          </div>
+          <div class="filter__favorite">
+            <input type="checkbox" class="checkbox-fav" id="checkbox-fav">
+            <label for="checkbox-fav">Только любимые</label>
+          </div>
+          <div class="filter__reset">
+            <button class="reset-filter">Сбросить фильтры</button>
+            <button class="reset-settings">Сбросить настройки</button>
+          </div>
+        
+      </section>
+      <div class="toys-block">
+        <h2 class="toys-block__header toys-block__link">Игрушки</h2>
+        <div class="toys-block__cards"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tree-page hide">
+    <div class="container tree-page__container">
+
+      <div class="container tree__setting">
+        <div class="tree__select-tree_text">Выберите елку</div>
+        <div class="tree__select-tree">
+          <div class="tree-example num1" data-tree="1"></div>
+          <div class="tree-example num2" data-tree="2"></div>
+          <div class="tree-example num3" data-tree="3"></div>
+          <div class="tree-example num4" data-tree="4"></div>
+          <div class="tree-example num5" data-tree="5"></div>
+          <div class="tree-example num6" data-tree="6"></div>
+        </div>
+        <div class="tree__select-tree_text">Выберите фон</div>
+        <div class="tree__select-bg">
+          <div class="bg num1" data-bg="1"></div>
+          <div class="bg num2" data-bg="2"></div>
+          <div class="bg num3" data-bg="3"></div>
+          <div class="bg num4" data-bg="4"></div>
+          <div class="bg num5" data-bg="5"></div>
+          <div class="bg num6" data-bg="6"></div>
+          <div class="bg num7" data-bg="7"></div>
+          <div class="bg num8" data-bg="8"></div>
+          <div class="bg num9" data-bg="9"></div>
+          <div class="bg num10" data-bg="10"></div>
+        </div>
+        <div class="tree__select-tree_text">Гирлянда</div>
+        <div class="tree__select-garland">
+          <div class="garland num1" data-color="multicolor"></div>
+          <div class="garland num2" data-color="red"></div>
+          <div class="garland num3" data-color="blue"></div>
+          <div class="garland num4" data-color="yellow"></div>
+          <div class="garland num5" data-color="green"></div>
+          <input type="checkbox" class="garland__checker" value="multicolor">
+        </div>
+      </div>
+      <div class="main-tree-container">
+      </div>
+      
+      <div class="container tree__picture">
+      <!-- <map name="tree-map">
+      <area shape="poly" coords="365,699,189,706,113,683,31,608,2,555,2,539,18,437,73,351,106,224,161,134,243,-1,306,75,353,144,399,221,424,359,452,459,496,550,444,664">
+      </map> -->
+        <div class="garland-tree-container hide"></div>
+        <img id="tree-picture" src="assets/tree/3.png" class="main-tree" usemap="#tree-map" alt="tree">   
+        <div class="tree__toys-on"></div>
+      </div>
+      
+      <div class="container tree__toys">
+        <div class="tree__select-tree_text">Игрушки</div>
+        <div class="tree__toys-selected">
+            
+        </div>
+        <div class="tree__select-tree_text">Вы нарядили</div>
+        <div class="tree__decorate">
+          <div class="tree-example num1"></div>
+          <div class="tree-example num2"></div>
+          <div class="tree-example num3"></div>
+          <div class="tree-example num4"></div>
+          <div class="tree-example num5"></div>
+          <div class="tree-example num6"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-github">
+        <a class="footer-github-link" href="https://github.com/kusakinvova" target="_blank">github</a>
+      </div>
+      <a class="rss-logo" href="https://rs.school/js/" target="_blank">
+        <img src="./assets/svg/rss.svg"  width="160" height="60" alt="rss logo">
+      </a>
+    </div>
+  </footer>
+  <audio></audio>
+</body>
+
+</html>
