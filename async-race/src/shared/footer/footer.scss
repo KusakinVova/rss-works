@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 50px;
+  color: #ffffff;
+
+  &-item {
+    width: 120px;
+    text-align: center;
+  }
+
+  &-link {
+    color: #ffffff;
+    transition: 0.3s;
+    &:hover {
+      color: #198313;
+      border-color: #198313;
+      background: none;
+    }
+  }
+
+  svg {
+    width: 100px;
+    height: auto;
+  }
+}

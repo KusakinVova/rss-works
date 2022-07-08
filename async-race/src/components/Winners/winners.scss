@@ -1,0 +1,27 @@
+.winners {
+  color: white;
+
+  & .pagination-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .winners-table {
+    border-collapse: collapse;
+    margin: 0 auto;
+
+    & .winners-table_header {
+      background-color: #5EB1AD;
+      color: #000000;
+    }
+
+    & .winners-table_cell {
+      padding: 4px 8px;
+      &>svg{
+        // height: ;
+      }
+    }
+  }
+
+}
