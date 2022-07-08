@@ -2,11 +2,18 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
-    "module": "es6",
-    "target": "es6",
-    "allowJs": false,
+    "module": "commonjs",
+    "target": "ES2015",
+    "allowJs": true,
     "moduleResolution": "node",
-    "outDir": "dist"
+    "outDir": "./dist/",
+    "strictNullChecks": false,
+    "strict": true,
+    "sourceMap": true,
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "./src",

@@ -1,0 +1,73 @@
+.main-page{
+  background-image: url("./assets/bg.jpg");
+  background-size: cover;
+
+  &__container {
+    min-height: calc(100vh - 150px);
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 600px;
+    height: 250px;
+    margin-top: 300px;
+    color: white;
+    font-size: 52px;
+    font-weight: normal;
+    border: 2px solid #278D9F;
+    border-radius: 30px;
+    background-color: #1f707f4d;
+    backdrop-filter: blur(10px);
+  }
+  &__btn {
+    width: 200px;
+    height: 60px;
+    border: 2px solid #278D9F;
+    border-radius: 30px;
+    background-color: #1f707f4d;
+    backdrop-filter: blur(10px);
+    font-weight: lighter;
+    font-size: 22px;
+    color: #ffffff;
+    transition: 0.3s;
+    cursor: pointer;
+  
+    &:hover {
+      backdrop-filter: blur(0px);
+    }
+  }
+}
+
+
+.ball {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &_left {
+    width: 400px;
+    height: 500px;
+    left: 15vw;
+    top: 150px;
+    background-image: url("./assets/toys/3.png");
+  }
+
+  &_right {
+    width: 240px;
+    height: 300px;
+    top: 150px;
+    right: 15vw;
+    background-image: url("./assets/toys/20.png");
+  }
+}

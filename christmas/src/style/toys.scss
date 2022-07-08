@@ -1,4 +1,4 @@
-@import "../../node_modules/nouislider/dist/nouislider.min.css";
+// @import "../../node_modules/nouislider/dist/nouislider.min.css";
 
 
 /* toys page */
@@ -118,9 +118,13 @@
   filter: invert(20%);
 }
 
+.filter__shape button.active,
+.filter__size button.active,
 .shape-button-active {
   filter: invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%) contrast(88%);
 }
+
+
 
 .shape-select button:nth-child(1) {
   background-image: url("./assets/svg/ball.svg");
@@ -144,6 +148,7 @@
 
 .color-select button {
   position: relative;
+  display: inline-flex;
   width: 30px;
   height: 30px;
   margin: 15px 10px;
@@ -155,12 +160,35 @@
   transition: .3s;
 }
 
+.filter__color button.active::after {
+  background-image: url("./assets/svg/checked.svg");
+  content: "";
+  font-size: 44px;
+  line-height: 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .color-select button:nth-child(1) {
   background-color: white;
+  &.active::after{
+    filter: invert(49%) sepia(0%) saturate(21%) hue-rotate(239deg) brightness(108%) contrast(64%);
+    transform: scale(1);
+  }
 }
 
 .color-select button:nth-child(2) {
   background-color: yellow;
+  &.active::after{
+    filter: invert(49%) sepia(0%) saturate(21%) hue-rotate(239deg) brightness(108%) contrast(64%);
+    transform: scale(1);
+  }
 }
 
 .color-select button:nth-child(3) {
@@ -191,19 +219,19 @@
   left: 0px;
 }
 
-.count-slider-container,
-.year-slider-container {
+.count-slider-container .slider,
+.year-slider-container .slider{
   height: 3px;
   border: none;
 }
 
-.count-slider-container .noUi-connect,
-.year-slider-container .noUi-connect {
+.count-slider-container .slider .noUi-connect,
+.year-slider-container .slider .noUi-connect {
   background: #278D9F;
 }
 
-.count-slider-container .noUi-handle,
-.year-slider-container .noUi-handle {
+.count-slider-container .slider .noUi-handle,
+.year-slider-container .slider .noUi-handle {
   height: 14px;
   width: 14px;
   top: -5px;
@@ -211,19 +239,25 @@
   border-radius: 9px;
 }
 
-.count-slider-container .noUi-handle:after,
-.count-slider-container .noUi-handle:before,
-.year-slider-container .noUi-handle:after,
-.year-slider-container .noUi-handle:before {
+.count-slider-container .slider .noUi-handle:after,
+.count-slider-container .slider .noUi-handle:before,
+.year-slider-container .slider .noUi-handle:after,
+.year-slider-container .slider .noUi-handle:before {
   display: none;
 }
 
-.count-values,
-.year-values {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
+.count-slider-container .from,
+.count-slider-container .to,
+.year-slider-container .from,
+.year-slider-container .to{
+  display: inline-block;
+  width: 49%;
+  padding: 5px 20px 0;
+}
+
+.count-slider-container .to,
+.year-slider-container .to{
+  text-align: right;
 }
 
 .filter__favorite {
@@ -259,6 +293,27 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 50% 50%;
+}
+
+.filter__size-button {
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all .3s;
+  &:hover {
+    filter: invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%) contrast(88%);
+  }
+  &_xl {
+    background: url("./assets/svg/ball.svg") center / contain no-repeat;
+  }
+  &_m {
+    background: url("./assets/svg/ball.svg") center / 80% no-repeat;
+  }
+  &_s {
+    background: url("./assets/svg/ball.svg") center / 60% no-repeat;
+  }
 }
 
 .checkbox:checked+label::before,

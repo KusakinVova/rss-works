@@ -1,0 +1,27 @@
+.snowflake {
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  top: -20px;
+  animation: snowfall linear forwards;
+  background-size: contain;
+  background-image: url("./assets/svg/snow.svg");
+  z-index: 1000;
+}
+
+@keyframes snowfall {
+	to {
+		transform: translateY(100vh);
+	}
+}
+
+.snow {
+  z-index: 999;
+  position: absolute;
+  height: calc(100vh - 140px);
+  width: 50%;
+  top: 70px;
+  left: 25%;
+  overflow: hidden;
+  pointer-events: none;
+}

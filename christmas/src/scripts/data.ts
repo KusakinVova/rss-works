@@ -1,4 +1,6 @@
-const data = [
+import { IToy } from './interfaces';
+
+const data: IToy[] = [
   {
     num: '1',
     name: 'Большой шар с рисунком',
