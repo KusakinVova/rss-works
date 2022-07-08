@@ -1,0 +1,27 @@
+{
+  "ru" : {
+    {"author" : "Наполеон Хилл, журналист и писатель", "text" : "Что разум человека может постигнуть и во что он может поверить, того он способен достичь."},
+    {"author" : "Альберт Эйнштейн", "text" : "Стремитесь не к успеху, а к ценностям, которые он дает."},
+    {"author" : "Амелия Эрхарт", "text" : "Сложнее всего начать действовать, все остальное зависит только от упорства."},
+    {"author" : "Федор Достоевский", "text" : "Надо любить жизнь больше, чем смысл жизни."},
+    {"author" : "Джон Леннон", "text" : "Жизнь - это то, что с тобой происходит, пока ты строишь планы."},
+    {"author" : "Альберт Эйнштейн", "text" : "Логика может привести Вас от пункта А к пункту Б, а воображение — куда угодно."},
+    {"author" : "Борис Стругацкий", "text" : "Начинать всегда стоит с того, что сеет сомнения."},
+    {"author" : "Стив Джобс", "text" : "Ваше время ограничено, не тратьте его, живя чужой жизнью."},
+    {"author" : "Винс Ломбарди, тренер по американскому футболу", "text" : "Победа - это еще не все, все - это постоянное желание побеждать."},
+    {"author" : "Генри Форд", "text" : "Если вы думаете, что на что-то способны, вы правы; если думаете, что у вас ничего не получится - вы тоже правы."}
+  },
+  "en" : {
+    {"author" : "George Bernard Shaw", "text" : "Success does not consist in never making mistakes but in never making the same one a second time."},
+    {"author" : "Leonardo di ser Piero da Vinci", "text" : "Simplicity is the ultimate sophistication."},
+    {"author" : "Confucius", "text" : "There are three things which the superior man guards against. In youth...lust. When he is strong...quarrelsomeness. When he is old...covetousness."},
+    {"author" : "Oscar Fingal O’Flahertie Wills Wilde", "text" : "Always forgive your enemies; nothing annoys them so much."},
+    {"author" : "Steven Paul Jobs", "text" : "Your time is limited, so don’t waste it living someone else’s life."},
+    {"author" : "Thomas Woodrow Wilson", "text" : "No two persons ever read the same book."},
+    {"author" : "Lucius Annaeus Seneca", "text" : "While we are postponing, life speeds by."},
+    {"author" : "Farrah GrayВикипедия", "text" : "Build your own dreams, or someone else will hire you to build theirs."},
+    {"author" : "Charles Robert Darwin", "text" : "It is not the strongest of the species that survives, nor the most intelligent, but the one most responsive to change."},
+    {"author" : "Bob Marley", "text" : "Love the life you live, and live the life you love."},
+    {"author" : "Henry Wadsworth Longfellow", "text" : "Music is the universal language of mankind."}
+  }
+}

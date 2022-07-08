@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="./assets/icon/bass-guitar.png" rel="shortcut icon" />
+  <link rel="stylesheet" href="./assets/css/owfont-regular.css" />
+  <link rel="stylesheet" href="./assets/css/clock.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+
+    <div class="player-block">
+      <div class="player">
+        <div class="player-controls">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="play-next player-icon"></button>
+          <button class="play-volume player-icon"></button>
+          <input type="range" name="volume" class="play-volume-line" value="100">
+        </div>
+        <div class="track-name"></div>
+        <div class="block-time">
+          <input type="range" name="time" class="play-time-line" value="0">
+          <span class="time-info">
+            <span class="current-time">00:00</span> / <span class="all-time">00:00</span>
+          </span>
+        </div>
+
+        <ul class="play-list"></ul>
+      </div>
+    </div>
+
+    <div class="clock-block">
+      <div class="clock">
+        <div class="clock-circle"></div>
+        <div class="clock-line clock-line-hour"></div>
+        <div class="clock-line clock-line-min"></div>
+        <div class="clock-line clock-line-sec"></div>
+        <div class="clock-numbers">
+          <span class="clock-numb clock-numb1">1</span>
+          <span class="clock-numb clock-numb2">2</span>
+          <span class="clock-numb clock-numb3">3</span>
+          <span class="clock-numb clock-numb4">4</span>
+          <span class="clock-numb clock-numb5">5</span>
+          <span class="clock-numb clock-numb6">6</span>
+          <span class="clock-numb clock-numb7">7</span>
+          <span class="clock-numb clock-numb8">8</span>
+          <span class="clock-numb clock-numb9">9</span>
+          <span class="clock-numb clock-numb10">10</span>
+          <span class="clock-numb clock-numb11">11</span>
+          <span class="clock-numb clock-numb12">12</span>
+        </div>
+      </div>
+    </div>
+    <div class="weather-block">
+      <div class="weather">
+        <input type="text" class="city user__city" placeholder="[Enter sity]" />
+        <i class="weather-icon owf"></i>
+        <div class="weather-error"></div>
+        <div class="description-container">
+          <span class="temperature"></span>
+          <span class="weather-description"></span>
+        </div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+
+
+
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name user__name" placeholder="[Enter name]" />
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="quote__block">
+      <button class="change-quote"></button>
+      <div>
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+    <div class="footer__list">
+      <span class="footer__item">© 2021</span>
+      <a class="footer__item" href="https://rs.school/" target="_blank" title="school link">The Rolling Scopes School</a>
+      <a class="footer__item footertask" href="https://github.com/rolling-scopes-school/tasks/blob/master/tasks/momentum/momentum-stage1.md" target="_blank" title="task link">Task</a>
+      <a class="footer__item" href="https://github.com/KusakinVova" target="_blank" title="author github">KusakinVova</a>
+    </div>
+    <button class="settings-button"></button>
+  </footer>
+  <div class="pop">
+    <p class="pop__title">Настройки</p>
+    <button class="pop-closer"></button>
+    <div class="settings__list">
+      <p class="settings__item">
+        <span class="title_lang">Lang</span>
+        <input type="radio" name="lang" value="en" checked><span class="lang_val_en">EN</span>
+        <input type="radio" name="lang" value="ru"><span class="lang_val_кг">RU</span>
+      </p>
+      <p class="settings__item">
+        <p class="title_show_hide">Показать / Скрыть</p>
+        <p><span class="settingsClock">Часы</span><input class="chcker-clock" type="checkbox" name="clock" checked></p>
+        <p><span class="settingstime">Время</span><input class="chcker-time" type="checkbox" name="time" checked></p>
+        <p><span class="settingsdate">Дата</span><input  class="chcker-date" type="checkbox" name="date" checked></p>
+        <p><span class="settingsweather">Погода</span><input class="chcker-weather" type="checkbox" name="weather" checked></p>
+        <p><span class="settingsquotes">Цитата</span><input class="chcker-quote" type="checkbox" name="quote" checked></p>
+        <p><span class="settingsgreeting">Приветствие</span><input class="chcker-greeting" type="checkbox" name="greeting" checked></p>
+        <p><span class="settingsplayer">Плейр</span><input class="chcker-player" type="checkbox" name="player" checked></p>
+        <p><span class="settingsfooter">Подвал</span><input class="chcker-footer" type="checkbox" name="footer" checked></p>
+      </p>
+    </div>
+  </div>
+  <script type="module" src="./assets/js/script.js"></script>
+</body>
+</html>

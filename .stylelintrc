@@ -9,6 +9,6 @@
         "composes", "-webkit-transition"
       ]
     }],
-    "unit-whitelist": ["em", "rem", "s", "px", "%", "vh", "deg", "ms"]
+    "unit-whitelist": ["em", "rem", "s", "px", "%", "vh", "vw", "deg", "ms"]
   }
 }
